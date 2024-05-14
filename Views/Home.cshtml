@@ -1,0 +1,217 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+<style>
+    .home-splash {
+        overflow: hidden;
+        background: rgb(23 30 95);
+        background-size: cover;
+        width: 100%;
+        height: calc(100vh - 15vh);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wall-sign {
+        display: flex;
+        flex: 1;
+        height: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .wall-sign-connector {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 2vw;
+        height: 35vh;
+        margin-bottom: 24vh;
+    }
+
+    .wall-bar {
+        width: 100%;
+        aspect-ratio: 1/1;
+        background: black;
+    }
+
+    .wall {
+        background: #010212;
+        height: 100%;
+        flex: 1;
+    }
+
+    .sign-whole {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        flex: 2;
+        height: -webkit-fill-available;
+        padding: 1rem 2rem 1rem 0;
+    }
+
+    .top-sign {
+        width: 100%;
+        aspect-ratio: 1/1.2;
+        background: slategrey;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sign-logo {
+        width: 100%;
+        aspect-ratio: inherit;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+
+    .sign-text {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sign-connector {
+        width: 100%;
+        height: 2vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .chain {
+        height: 100%;
+        aspect-ratio: 1/1;
+        background: black;
+    }
+
+    .sub-sign {
+        width: 100%;
+        max-height: 10vh;
+        background: slategrey;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sub-sign h3{
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .splash-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex: 1.5;
+        height: 100%;
+    }
+
+    .splash-text-content {
+        background: rgba(0,0,0,0.2);
+        margin-right: 2rem;
+        padding: 2rem;
+        border-radius: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: antiquewhite;
+    }
+</style>
+
+<body>
+    <div class="home-splash">
+        <div class="wall-sign">
+            <div class="wall">
+
+            </div>
+            <div class="wall-sign-connector">
+                <div class="wall-bar"></div>
+                <div class="wall-bar"></div>
+            </div>
+            <div class="sign-whole">
+                <div class="top-sign">
+                    <div class="sign-logo" style="background-image: url(/media/t01ehbod/temp.gif);">
+                    </div>
+                    <div class="sign-text">
+                        @*<h1>Chloe Bui</h1>*@
+                    </div>
+                </div>
+                <div class="sign-connector">
+                    <div class="chain"></div>
+                    <div class="chain"></div>
+                </div>
+                <div class="sub-sign">
+                    <h3>Test Sub Sign</h3>
+                </div>
+                <div class="sign-connector">
+                    <div class="chain"></div>
+                    <div class="chain"></div>
+                </div>
+                <div class="sub-sign">
+                    <h3>Test Sub Sign</h3>
+                </div>
+            </div>
+        </div>
+        <div class="splash-right">
+            <div class="splash-text-content">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                    molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                    numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+                    optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+                    obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+                    nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+                    tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+                    quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos
+                    sapiente officiis modi at sunt excepturi expedita sint?
+                </p>
+            </div>
+        </div>
+    </div>
+    
+
+
+    @*need to parse block list and make cshtml pages for each of the blocks*@
+    @*
+    @Html.GetBlockListHtml(Model.PageBlocks)
+    *@
+</body>
+
+<script>
+    function properSpacing() {
+        let homeSplash = document.querySelector(".home-splash");
+        let topSign = document.querySelector(".top-sign");
+        let wallSignConnector = document.querySelector(".wall-sign-connector");
+
+        wallSignConnector.style.height = topSign.clientHeight + "px";
+
+        try {
+            homeSplash.style.height = "calc(100vh - " + document.querySelector("nav").clientHeight + "px)";
+        } catch (error){
+            console.log(error)
+        }
+    };
+
+    document.onload = properSpacing();
+    window.onresize = properSpacing;
+</script>

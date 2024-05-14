@@ -1,0 +1,10 @@
+﻿.full-width-image {
+    width: 100%;
+    height: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.full-width-image img{
+    height: 100%
+}

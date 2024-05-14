@@ -1,0 +1,156 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    h1, h2, h3, h4, h5, p{
+        color: whitesmoke;
+    }
+    .overlay {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: -1;
+        padding: 2rem;
+    }
+
+    .overlay-stats {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        gap: 2rem;
+        padding: 0 2rem;
+        height: 2rem;
+    }
+
+    .overlay-borders {
+        width: 100%;
+        height: 100%;
+    }
+
+    .overlay-borders .top-left {
+        margin: 2rem;
+        width: 20vw;
+        height: 1.5rem;
+        background-color: #000;
+        left: 0;
+        top: 0;
+        position: absolute;
+    }
+
+    .overlay-borders .top-left:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: "";
+        display: block;
+        width: 1.5rem;
+        height: 23vh;
+        background-color: #000;
+    }
+
+    .overlay-borders .top-right {
+        margin: 2rem;
+        width: 20vw;
+        height: 1.5rem;
+        background-color: #000;
+        right: 0;
+        top: 0;
+        position: absolute;
+    }
+
+    .overlay-borders .top-right:after {
+        position: absolute;
+        right: 0;
+        top: 0;
+        content: "";
+        display: block;
+        width: 1.5rem;
+        height: 23vh;
+        background-color: #000;
+    }
+
+    .overlay-borders .bottom-left {
+        margin: 2rem;
+        width: 20vw;
+        height: 1.5rem;
+        background-color: #000;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+    }
+
+    .overlay-borders .bottom-left:after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: "";
+        display: block;
+        width: 1.5rem;
+        height: 23vh;
+        background-color: #000;
+    }
+
+    .overlay-borders .bottom-right {
+        margin: 2rem;
+        width: 20vw;
+        height: 1.5rem;
+        background-color: #000;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+    }
+
+    .overlay-borders .bottom-right:after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        content: "";
+        display: block;
+        width: 1.5rem;
+        height: 23vh;
+        background-color: #000;
+    }
+
+    .page-content {
+        overflow-x: hidden;
+        height: calc(100vh - 7rem);
+        background-color: #0000ff4a;
+        position: relative;
+        top: 3.5rem;
+        width: calc(100vw - 7rem);
+        left: 3.5rem;
+    }
+    .page-content::-webkit-scrollbar{
+        display: none;
+    }
+
+    .page{
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<div class="overlay col">
+    <div class="overlay-borders">
+        <div class="top-left"></div>
+        <div class="top-right"></div>
+        <div class="bottom-left"></div>
+        <div class="bottom-right"></div>
+    </div>
+    <div class="overlay-stats">
+            <div class="overlay-recording">recording</div>
+            <div class="overlay-battery">battery</div>
+    </div>
+</div>
+
+
+<div class="page-content">
+    <div class="page">
+        <div class="text-center">
+            <h1 class="display-4">Welcome</h1>
+            <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        </div>
+    </div>
+</div>
