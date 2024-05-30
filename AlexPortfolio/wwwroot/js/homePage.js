@@ -352,6 +352,30 @@ function followMousePosition(mouseX, mouseY) {
 
 }
 
+//show and hide hidden pages
+function showProjectPage(pageId) {
+    var hidden_page_container = document.querySelector(".hidden-pages");
+
+    var target_page = document.querySelector("#" + pageId);
+
+    hidden_page_container.classList.toggle("closed");
+
+    target_page.classList.toggle("closed");
+}
+
+function closeHiddenPages() {
+    var hidden_page_container = document.querySelector(".hidden-pages");
+
+    hidden_page_container.classList.toggle("closed");
+
+    for (i = 0; i < hidden_page_container.childElementCount; i++) {
+        var child = hidden_page_container.children[i];
+        if (!child.classList.contains("closed")) {
+            child.classList.toggle("closed");
+        }
+    }
+}
+
 /// overlay effects
 //for recording
 const recording_dot = document.querySelector("#recording-dot");
@@ -397,4 +421,6 @@ window.onresize = () => (pageLen = pageSetup(pageLen), setUnderline());
 //mouse hover effect
 var mousePosition = [0, 0];
 
-document.onmousemove = () => (mousePosition = getMousePosition())
+document.onmousemove = () => (mousePosition = getMousePosition());
+
+closeHiddenPages();

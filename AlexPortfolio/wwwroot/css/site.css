@@ -87,17 +87,14 @@
 
 html {
     font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
     html {
         font-size: 16px;
     }
-}
-
-html {
-    position: relative;
-    min-height: 100%;
 }
 
 body {
@@ -139,6 +136,10 @@ body {
 
 .dark #theme-toggle .theme-glow {
     background: radial-gradient(400px, rgba(48, 0, 226, 0.15), transparent 80%);
+}
+
+.mobile-only {
+    display: none;
 }
 
 #theme-toggle {
@@ -632,9 +633,7 @@ body {
 }
 
 .page-title-no-interrupt {
-    position: absolute;
     width: 100%;
-    padding-right: 2rem;
 }
 
 .x-center {
@@ -653,17 +652,81 @@ body {
 }
 
     .tapes .tape {
-        background: red;
         width: 100%;
         aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
     }
+
+        .tapes .tape:hover .tape-middle {
+            animation: spin 3s linear infinite;
+        }
+
+            .tapes .tape:hover .tape-middle.sheen {
+                animation: none;
+            }
+
+        .tapes .tape * {
+            position: absolute;
+        }
 
         .tapes .tape a {
             width: 100%;
             height: 100%;
+            background: none;
+            z-index: 10;
         }
 
+        .tapes .tape .tape-back {
+            background: url(/public/CD_case.svg);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
 
+        .tapes .tape .tape-middle {
+            border-radius: 50%;
+            width: 75%;
+            aspect-ratio: 1 / 1;
+            inset: 12.5% 18.5%;
+            background: green;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 2;
+        }
+
+            .tapes .tape .tape-middle.sheen {
+                background: repeating-conic-gradient(#c3c3c3 0deg, #cccccc 15deg, #c6c6c6 30deg, #d7d7d7 45deg, #c3c3c3 60deg) 10% 10%;
+                opacity: 0.4;
+                z-index: 3;
+            }
+
+        .tapes .tape .tape-front {
+            background: url(/public/CD_internal.svg);
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+        }
+
+.dark .tapes .tape .tape-back {
+    filter: invert(92%) sepia(2%) saturate(1577%) hue-rotate(202deg) brightness(105%) contrast(102%);
+}
+
+.dark .tapes .tape .tape-front {
+    filter: invert(92%) sepia(2%) saturate(1577%) hue-rotate(202deg) brightness(105%) contrast(102%);
+}
+
+.light .tapes .tape .tape-back {
+    filter: contrast(1) saturate(0) invert(0);
+}
+
+.light .tapes .tape .tape-front {
+    filter: contrast(1) saturate(0) invert(0);
+}
 
 .contact-form {
     display: flex;
@@ -674,6 +737,11 @@ body {
     gap: 1rem;
     padding: 2rem;
 }
+
+    .contact-form .alert {
+        backdrop-filter: blur(5px);
+        margin: -1rem;
+    }
 
     .contact-form .form-button {
         height: 5rem;
@@ -706,6 +774,17 @@ body {
             .contact-form .form-group.message #message {
                 height: 100%;
             }
+
+.dark .contact-form .alert {
+    background-color: #ffffff08;
+    border-color: #f8f8ff;
+    animation: blue-strobe;
+}
+
+.light .contact-form .alert {
+    background-color: #ffffff08;
+    border-color: black;
+}
 
 .light .contact-form .form-group.message #message {
     border-radius: 1rem;
@@ -986,6 +1065,7 @@ body {
 
 section#about_me {
     flex-direction: row;
+    gap: 1rem;
 }
 
     section#about_me .page-text {
@@ -1014,17 +1094,17 @@ section#about_me {
         width: calc(100% / 3);
         display: flex;
         align-items: center;
+        position: relative;
     }
 
         section#about_me .picture-container .main-img {
-            width: calc(100%/3);
+            width: 100%;
             height: 80%;
             object-fit: cover;
             object-position: bottom;
             filter: grayscale(1) opacity(0.15);
             position: absolute;
             z-index: 1;
-            padding: 1rem 0.5rem 1rem 0;
         }
 
         section#about_me .picture-container .blurry-bg-img {
@@ -1036,8 +1116,8 @@ section#about_me {
         }
 
         section#about_me .picture-container .static-overlay {
-            width: calc(100%/3);
-            height: 77%;
+            width: 100%;
+            height: 80%;
             position: absolute;
             overflow: hidden;
             display: flex;
@@ -1067,6 +1147,418 @@ section#about_me {
 .dark section#about_me .page-text .quote p {
     color: rgb(56, 216, 29);
 }
+
+section#experience {
+    flex-direction: row;
+    gap: 1rem;
+}
+
+    section#experience .page-text {
+        width: calc((100%/3)*2);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+    }
+
+        section#experience .page-text::-webkit-scrollbar {
+            width: 1rem;
+        }
+
+        section#experience .page-text .quote {
+            font-size: 2.5em;
+            font-style: italic;
+            line-height: 1.1em;
+        }
+
+        section#experience .page-text .paragraph {
+            padding-right: 1rem;
+        }
+
+            section#experience .page-text .paragraph .quote p {
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+
+            section#experience .page-text .paragraph .body-text {
+            }
+
+                section#experience .page-text .paragraph .body-text p {
+                    font-size: 1.2em;
+                }
+
+    section#experience .picture-container {
+        height: 100%;
+        width: calc(100% / 3);
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+        section#experience .picture-container .main-img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+            object-position: bottom;
+            filter: grayscale(0.5) opacity(0.15);
+            position: absolute;
+            z-index: 1;
+        }
+
+        section#experience .picture-container .blurry-bg-img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+            object-position: bottom;
+            filter: grayscale(0.5) opacity(0.25) blur(30px);
+        }
+
+        section#experience .picture-container .static-overlay {
+            width: 100%;
+            height: 80%;
+            position: absolute;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            section#experience .picture-container .static-overlay img {
+                width: 200%;
+                height: 200%;
+                object-fit: cover;
+                filter: grayscale(1) opacity(0.05);
+                position: absolute;
+                z-index: 1;
+                animation-name: shift;
+                animation-duration: 0.1s;
+                animation-direction: alternate;
+                animation-fill-mode: both;
+                animation-iteration-count: infinite;
+            }
+
+    section#experience .experiences {
+        width: 100%;
+    }
+
+        section#experience .experiences .experience {
+            border-radius: 2rem;
+            padding: 1rem;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 1rem;
+            width: calc(100% - 2rem);
+        }
+
+            section#experience .experiences .experience .move-right {
+                transition-property: padding;
+                transition-timing-function: cubic-bezier(.4,0,.2,1);
+                transition-duration: 0.15s;
+                padding: 0 0 0 0.5rem;
+            }
+
+            section#experience .experiences .experience:hover .move-right {
+                transition-property: padding;
+                transition-timing-function: cubic-bezier(.4,0,.2,1);
+                transition-duration: 0.15s;
+                padding: 0 0 0 2rem;
+            }
+
+            section#experience .experiences .experience a {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+
+            section#experience .experiences .experience .left {
+                width: calc(100% / 5);
+            }
+
+            section#experience .experiences .experience .right {
+                width: calc((100%/5)*4);
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+                section#experience .experiences .experience .right .job-title {
+                    font-weight: 600;
+                }
+
+                section#experience .experiences .experience .right ul.skills {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    gap: 0.5rem;
+                }
+
+                    section#experience .experiences .experience .right ul.skills .skill {
+                        background: rgba(37, 151, 18, 0.5);
+                        color: rgb(37, 255, 0);
+                        font-weight: 600;
+                        border-end-end-radius: 2rem;
+                        border-end-start-radius: 2rem;
+                        border-start-end-radius: 2rem;
+                        border-start-start-radius: 2rem;
+                        padding: 0.5rem;
+                    }
+
+.light section#experience .experiences {
+    color: #000000;
+}
+
+    .light section#experience .experiences .experience:hover {
+        background: rgba(157, 156, 156, 0.4);
+        box-shadow: inset 0px 2px 4px -4px #000000;
+    }
+
+        .light section#experience .experiences .experience:hover .right .job-title {
+            color: rgb(48, 0, 226);
+        }
+
+    .light section#experience .experiences .experience .left .duration {
+        color: #303031;
+    }
+
+    .light section#experience .experiences .experience .right ul.skills .skill {
+        background: rgba(48, 0, 226, 0.5);
+        color: rgb(0 255 210);
+    }
+
+.light section#experience .page-text .quote p {
+    color: rgb(48, 0, 226);
+}
+
+.dark section#experience .experiences {
+    color: #f8f8ff;
+}
+
+    .dark section#experience .experiences .experience:hover {
+        background: rgba(45, 45, 45, 0.5);
+        box-shadow: inset 0px 2px 4px -4px #f8f8ff;
+    }
+
+        .dark section#experience .experiences .experience:hover .right .job-title {
+            color: rgb(56, 216, 29);
+        }
+
+    .dark section#experience .experiences .experience .left .duration {
+        color: #a5a5a9;
+    }
+
+    .dark section#experience .experiences .experience .right ul.skills .skill {
+        background: rgba(37, 151, 18, 0.5);
+        color: rgb(37, 255, 0);
+    }
+
+.dark section#experience .page-text .quote p {
+    color: rgb(56, 216, 29);
+}
+
+
+.dark section#experience .page-text::-webkit-scrollbar-thumb {
+    background: rgb(56, 216, 29);
+    border-radius: 10px;
+}
+
+    .dark section#experience .page-text::-webkit-scrollbar-thumb:hover {
+        background: rgb(38 147 20);
+    }
+
+.light section#experience .page-text::-webkit-scrollbar-thumb {
+    background: rgb(48, 0, 226);
+    border-radius: 10px;
+}
+
+    .light section#experience .page-text::-webkit-scrollbar-thumb:hover {
+        background: rgb(33 0 155);
+    }
+
+.hidden-pages {
+    position: fixed;
+    width: calc(100vw - 7rem);
+    height: calc(100vh - 7rem);
+    top: 3rem;
+    left: 3rem;
+    margin: 0.5rem;
+    border-end-end-radius: 1vw;
+    border-start-end-radius: 1vw;
+    border-end-start-radius: 1vw;
+    border-start-start-radius: 1vw;
+    overflow: clip;
+    z-index: 100;
+}
+
+    .hidden-pages.closed {
+        display: none;
+    }
+
+    .hidden-pages .hidden-page {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        border-end-end-radius: 1vw;
+        border-start-end-radius: 1vw;
+        border-end-start-radius: 1vw;
+        border-start-start-radius: 1vw;
+        border: 0.6rem solid black;
+    }
+
+        .hidden-pages .hidden-page.closed {
+            display: none;
+        }
+
+        .hidden-pages .hidden-page .hidden-page-content {
+            width: 100%;
+            height: 100%;
+            padding: 0 2rem 0 2rem;
+            overflow: auto;
+        }
+
+            .hidden-pages .hidden-page .hidden-page-content * {
+                margin-top: 1rem;
+            }
+
+            .hidden-pages .hidden-page .hidden-page-content::-webkit-scrollbar {
+                width: 1rem;
+            }
+
+            .hidden-pages .hidden-page .hidden-page-content .paragraph {
+                width: 100%;
+            }
+
+                .hidden-pages .hidden-page .hidden-page-content .paragraph * {
+                    margin-top: 0;
+                }
+
+            .hidden-pages .hidden-page .hidden-page-content .image {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+                .hidden-pages .hidden-page .hidden-page-content .image * {
+                    width: 90%;
+                }
+
+            .hidden-pages .hidden-page .hidden-page-content .image-text {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                gap: 1rem;
+            }
+
+                .hidden-pages .hidden-page .hidden-page-content .image-text .paragraph {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                .hidden-pages .hidden-page .hidden-page-content .image-text .image {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                    .hidden-pages .hidden-page .hidden-page-content .image-text .image * {
+                        width: 90%;
+                        margin: 0;
+                    }
+
+
+
+        .hidden-pages .hidden-page .hidden-page-nav {
+            width: 100%;
+            height: 4rem;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            position: relative;
+        }
+
+            .hidden-pages .hidden-page .hidden-page-nav p {
+                margin: 0;
+                font-size: larger;
+            }
+
+            .hidden-pages .hidden-page .hidden-page-nav .hidden-page-nav-title {
+                color: ghostwhite;
+                width: 100%;
+                height: 100%;
+                align-content: center;
+                text-align: center;
+                position: absolute;
+            }
+
+            .hidden-pages .hidden-page .hidden-page-nav .hidden-page-nav-close {
+                color: ghostwhite;
+                padding: 0 2rem;
+                height: 100%;
+                border-start-end-radius: 0.5vw;
+                align-content: center;
+                text-decoration: none;
+                z-index: 10;
+            }
+
+                .hidden-pages .hidden-page .hidden-page-nav .hidden-page-nav-close:hover {
+                    background: #ff0000;
+                    cursor: pointer;
+                }
+
+.dark .hidden-pages {
+    box-shadow: 0px 0px 10px 0px rgb(56, 216, 29);
+}
+
+    .dark .hidden-pages .hidden-page {
+        background: #f8f8ff;
+    }
+
+        .dark .hidden-pages .hidden-page .hidden-page-content {
+            color: #000000;
+        }
+
+.light .hidden-pages {
+    box-shadow: 0px 0px 10px 0px rgb(48, 0, 226);
+}
+
+    .light .hidden-pages .hidden-page {
+        background: #373737;
+    }
+
+        .light .hidden-pages .hidden-page .hidden-page-content {
+            color: #f8f8ff;
+        }
+
+            .light .hidden-pages .hidden-page .hidden-page-content::-webkit-scrollbar-thumb {
+                background: rgb(56, 216, 29);
+                border-radius: 10px;
+            }
+
+                .light .hidden-pages .hidden-page .hidden-page-content::-webkit-scrollbar-thumb:hover {
+                    background: rgb(38 147 20);
+                }
+
+.dark .hidden-pages .hidden-page .hidden-page-content::-webkit-scrollbar-thumb {
+    background: rgb(48, 0, 226);
+    border-radius: 10px;
+}
+
+    .dark .hidden-pages .hidden-page .hidden-page-content::-webkit-scrollbar-thumb:hover {
+        background: rgb(33 0 155);
+    }
 
 @media only screen and (min-width: 2560px) {
     h2 {
@@ -1114,6 +1606,19 @@ section#about_me {
         font-size: 2.2em;
     }
 
+    section#experience .page-text .quote {
+        font-size: 2.5em;
+        line-height: 1.9em;
+    }
+
+    section#experience .page-text .paragraph .quote p {
+        font-size: 2.2em;
+    }
+
+    section#experience .page-text .paragraph .body-text p {
+        font-size: 2.2em;
+    }
+
     #theme-toggle {
         width: 3.5rem;
         height: 3.5rem;
@@ -1154,23 +1659,164 @@ section#about_me {
     section#about_me .page-text .paragraph .body-text p {
         font-size: 1em;
     }
+
+    section#experience .page-text .quote {
+        font-size: 2em;
+    }
+
+    section#experience .page-text .paragraph .quote p {
+        font-size: 1.2em;
+    }
+
+    section#experience .page-text .paragraph .body-text p {
+        font-size: 1em;
+    }
 }
 
 @media only screen and (max-width: 768px) {
+
+    .mobile-only {
+        display: block;
+    }
+
     .page .bio-text {
         font-size: 1.5rem;
     }
 
-    section#about_me .page-text .paragraph .quote p {
-        font-size: 1em;
+    section#about_me {
+        flex-direction: column;
     }
 
-    section#about_me .page-text .paragraph .body-text p {
-        font-size: 0.9em;
+        section#about_me .picture-container {
+            position: absolute;
+            width: 100%;
+            justify-content: center;
+            left: 0.1rem;
+        }
+
+            section#about_me .picture-container .static-overlay {
+                padding: 1rem;
+            }
+
+            section#about_me .picture-container .main-img {
+                padding: 1rem;
+            }
+
+            section#about_me .picture-container .blurry-bg-img {
+                padding: 1rem;
+            }
+
+        section#about_me .page-text {
+            width: 100%;
+        }
+
+            section#about_me .page-text .heading {
+                align-self: center;
+            }
+
+            section#about_me .page-text .quote {
+                font-size: 1.5em;
+            }
+
+            section#about_me .page-text .paragraph {
+                z-index: 9;
+                position: relative;
+            }
+
+                section#about_me .page-text .paragraph .quote p {
+                    font-size: 1em;
+                }
+
+                section#about_me .page-text .paragraph .body-text p {
+                    font-size: 0.9em;
+                }
+
+    section#experience {
+        flex-direction: column;
     }
+
+        section#experience .experiences .experience {
+            flex-direction: column;
+        }
+
+            section#experience .experiences .experience:hover .move-right {
+                transition-property: padding;
+                transition-timing-function: cubic-bezier(.4,0,.2,1);
+                transition-duration: 0.15s;
+                padding: 0 0 0 1rem;
+            }
+
+            section#experience .experiences .experience .left {
+                width: 100%;
+            }
+
+            section#experience .experiences .experience .right {
+                width: 100%;
+            }
+
+        section#experience .picture-container {
+            position: absolute;
+            width: 100%;
+            justify-content: center;
+            left: 0.1rem;
+            z-index: 0;
+        }
+
+            section#experience .picture-container .static-overlay {
+                padding: 1rem;
+            }
+
+            section#experience .picture-container .main-img {
+                padding: 1rem;
+            }
+
+            section#experience .picture-container .blurry-bg-img {
+                padding: 1rem;
+            }
+
+        section#experience .page-text {
+            width: 100%;
+        }
+
+            section#experience .page-text .heading {
+                align-self: center;
+            }
+
+            section#experience .page-text .quote {
+                font-size: 1.5em;
+            }
+
+            section#experience .page-text .paragraph {
+                z-index: 9;
+                position: relative;
+            }
+
+                section#experience .page-text .paragraph .quote p {
+                    font-size: 1em;
+                }
+
+                section#experience .page-text .paragraph .body-text p {
+                    font-size: 0.9em;
+                }
 }
 
 @media only screen and (max-width: 767px) {
+
+    section#about_me .page-text .paragraph .quote p {
+        font-size: 1.2em;
+    }
+
+    section#about_me .page-text .paragraph .body-text p {
+        font-size: 1em;
+    }
+
+    section#experience .page-text .paragraph .quote p {
+        font-size: 1.2em;
+    }
+
+    section#experience .page-text .paragraph .body-text p {
+        font-size: 1em;
+    }
 
     #mouse-follow {
         visibility: hidden;
@@ -1220,62 +1866,24 @@ section#about_me {
     }
 
         .tapes .tape {
-            width: 60%;
+            height: calc(100%/3);
+            width: auto;
         }
+}
 
-    section#about_me {
-        flex-direction: column;
+@media only screen and (max-width: 425px) {
+    .hidden-pages .hidden-page .hidden-page-nav .hidden-page-nav-title {
+        padding-left: 1rem;
+        text-align: left;
     }
-
-        section#about_me .picture-container {
-            position: absolute;
-            width: 100%;
-            justify-content: center;
-            left: 0.1rem;
-        }
-
-            section#about_me .picture-container .static-overlay {
-                width: 100%;
-                padding: 1rem;
-            }
-
-            section#about_me .picture-container .main-img {
-                width: 100%;
-                padding: 1rem;
-            }
-
-            section#about_me .picture-container .blurry-bg-img {
-                padding: 1rem;
-            }
-
-        section#about_me .page-text {
-            width: 100%;
-        }
-
-            section#about_me .page-text .heading {
-                align-self: center;
-            }
-
-            section#about_me .page-text .quote {
-                font-size: 1.5em;
-            }
-
-            section#about_me .page-text .paragraph {
-                z-index: 9;
-                position: relative;
-            }
-
-                section#about_me .page-text .paragraph .quote p {
-                    font-size: 1.2em;
-                }
-
-                section#about_me .page-text .paragraph .body-text p {
-                    font-size: 1em;
-                }
 }
 
 @media only screen and (max-width: 375px) {
     section#about_me .page-text .paragraph .body-text p {
+        font-size: 0.9em;
+    }
+
+    section#experience .page-text .paragraph .body-text p {
         font-size: 0.9em;
     }
 }
@@ -1283,6 +1891,28 @@ section#about_me {
 @media only screen and (max-width: 355px) {
     section#about_me .page-text .paragraph .body-text p {
         font-size: 0.8em;
+    }
+
+    section#about_me .picture-container .main-img {
+        filter: grayscale(1) opacity(0.1);
+    }
+
+    section#experience .page-text .paragraph .body-text p {
+        font-size: 0.8em;
+    }
+
+    section#experience .picture-container .main-img {
+        filter: grayscale(1) opacity(0.1);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }
 

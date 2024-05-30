@@ -1,12 +1,14 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model ContactModel
+
+@{
+    ViewData["Title"] = "Alex Ellis-Wilson";
 }
 
 <div id="page-theme" class="dark">
 
     <div id="theme-toggle" onclick="toggleTheme(this)" title="Toggle Theme">
-        <img src="~/public/sun.svg" alt="Toggle for light and dark theme"/>
-        <img class="highlight-toggle" src="~/public/sun.svg" alt="highlight effect for theme toggle"/>
+        <img src="~/public/sun.svg" alt="Toggle for light and dark theme" />
+        <img class="highlight-toggle" src="~/public/sun.svg" alt="highlight effect for theme toggle" />
         <div class="theme-glow"></div>
     </div>
 
@@ -97,6 +99,7 @@
 
                 <ul>
                     <li><a href="#about_me">About me</a></li>
+                    <li><a href="#experience">My Experience</a></li>
                     <li><a href="#projects_1">Previous projects</a></li>
                     <li><a href="#contact_me">Contact me</a></li>
                 </ul>
@@ -122,7 +125,7 @@
                             <p>Playing RPG games like World of Warcraft on my old Pentium laptop, started my fascination for programming and how it could be utilised to create complicated and nuanced things.</p>
                             <p>Eventually, I was introduced to Python where the spark was truly lit, as with only a simple set of rules, I created the very basics of a text-based adventure game. This trend would continue in college where I began experimenting with 3D graphics in P5.js and basic app development in Java and Android Studio, making the best of the COVID free time.</p>
                         </div>
-                        
+
                     </div>
 
                 </div>
@@ -130,53 +133,158 @@
                     <div class="static-overlay">
                         <img src="/public/White_Noise04.jpg" alt="Tv static effect for image for more paranormal look">
                     </div>
-                    <img class="main-img" src="~/public/about_me_pfp.png" alt="picture of me smiling outside with a japanese bridge in the background"/>
-                    <img class="blurry-bg-img" src="~/public/about_me_pfp.png" alt="blurry duplicate picture of me smiling to give a feathered effect on the image on the page"/>
+                    <img class="main-img" src="~/public/about_me_pfp.png" alt="picture of me smiling outside with a japanese bridge in the background" />
+                    <img class="blurry-bg-img" src="~/public/about_me_pfp.png" alt="blurry duplicate picture of me smiling to give a feathered effect on the image on the page" />
 
                 </div>
             </section>
         </div>
 
         <div id="page-3" class="page">
-            <section id="projects_1">
-                <div class="text-center page-title-no-interrupt">
-                    <h1 class="display-4">Previous Projects Page 1</h1>
-                </div>
-                <div class="w-100 h-100 x-center">
-                    <div class="tapes">
-                        <div class="tape"><a href="" aria-label="temporary link"></a></div>
-                        <div class="tape"><a href="" aria-label="temporary link"></a></div>
-                        <div class="tape"><a href="" aria-label="temporary link"></a></div>
+            <section id="experience">
+                <div class="picture-container">
+                    <div class="static-overlay">
+                        <img src="/public/White_Noise04.jpg" alt="Tv static effect for image for more paranormal look">
                     </div>
+                    <img class="main-img" src="~/public/sisyphus.jpg" alt="picture of me smiling outside with a japanese bridge in the background" />
+                    <img class="blurry-bg-img" src="~/public/sisyphus.jpg" alt="blurry duplicate picture of me smiling to give a feathered effect on the image on the page" />
+
+                </div>
+
+                <div class="page-text">
+                    <div class="heading">
+                        <h1 class="display-1">Experience</h1>
+                    </div>
+
+                    <div class="paragraph">
+                        <div class="quote">
+                            <p>"A jack of all trades is a master of none, but oftentimes is better than a master of one." - William Shakespeare</p>
+                        </div>
+
+                        <div class="body-text">
+                        </div>
+                    </div>
+
+                    <div class="experiences">
+
+                        <div class="experience">
+                            <a class="company-url" href="https://www.thehumantech.agency/" target="_blank" aria-label="link to thehumantech agency's website, one of my previous employers"></a>
+                            <div class="left">
+                                <div class="duration">
+                                    Jun 2022 -- Jan 2024
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="job-title">
+                                    Placement Fullstack Developer • thehumantech Agency <span class="move-right">➼</span>
+                                </div>
+                                <div class="job-description">
+                                    Supporting clients daily through the support queue, building reactive CMS first web pages with a variety of frontend JS fameworks and developing blocks and tools in ASP.Net and .NetCore
+                                </div>
+                                <ul class="skills">
+                                    <li class="skill">HTML</li>
+                                    <li class="skill">CSS</li>
+                                    <li class="skill">SCSS</li>
+                                    <li class="skill">JavaScript</li>
+                                    <li class="skill">TypeScript</li>
+                                    <li class="skill">Angular</li>
+                                    <li class="skill">Node.js</li>
+                                    <li class="skill">nUnit</li>
+                                    <li class="skill">.Net Core</li>
+                                    <li class="skill">ASP.Net</li>
+                                    <li class="skill">MVC</li>
+                                    <li class="skill">Umbraco</li>
+                                    <li class="skill">Sitecore</li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+
                 </div>
             </section>
         </div>
 
         <div id="page-4" class="page">
-            <section id="projects_2">
+            <section id="projects_1">
                 <div class="text-center page-title-no-interrupt">
-                    <h1 class="display-4">Previous Projects Page 2</h1>
+                    <h1 class="display-4">Previous Projects Page 1</h1>
                 </div>
+
+                <div class="mobile-only text-center mt-1">
+                    <p class="m-0">On mobile? try pressing and holding the CD instead of just tapping 😁</p>
+                </div>
+
                 <div class="w-100 h-100 x-center">
                     <div class="tapes">
-                        <div class="tape"><a href="" aria-label="temporary link"></a></div>
-                        <div class="tape"><a href="" aria-label="temporary link"></a></div>
-                        <div class="tape"><a href="" aria-label="temporary link"></a></div>
+
+                        <div class="tape">
+                            <a aria-label="See Techne Diversity project work" onclick="showProjectPage('techne_diversity')"></a>
+                            <div class="tape-back"></div>
+                            <div class="tape-middle" style="background-image:url(public/techne.jpg); background-size: contain; background-color: whitesmoke;"></div>
+                            <div class="tape-middle sheen"></div>
+                            <div class="tape-front"></div>
+                        </div>
+
+                        <div class="tape">
+                            <a aria-label="See Wessex Internet project work" onclick="showProjectPage('wessex_internet')"></a>
+                            <div class="tape-back"></div>
+                            <div class="tape-middle" style="background-image:url(public/wessexInternet.png); background-position: center;"></div>
+                            <div class="tape-middle sheen"></div>
+                            <div class="tape-front"></div>
+                        </div>
+
+                        <div class="tape">
+                            <a aria-label="See Onewelbeck project work" onclick="showProjectPage('onewelbeck')"></a>
+                            <div class="tape-back"></div>
+                            <div class="tape-middle" style="background-image:url(public/onewelbeck.jpg); background-position: center;"></div>
+                            <div class="tape-middle sheen"></div>
+                            <div class="tape-front"></div>
+                        </div>
+
                     </div>
                 </div>
             </section>
         </div>
 
         <div id="page-5" class="page">
-            <section id="projects_3">
+            <section id="projects_2">
                 <div class="text-center page-title-no-interrupt">
-                    <h1 class="display-4">Previous Projects Page 3</h1>
+                    <h1 class="display-4">Previous Projects Page 2</h1>
                 </div>
+
+                <div class="mobile-only text-center mt-1">
+                    <p class="m-0">On mobile? try pressing and holding the CD instead of just tapping 😁</p>
+                </div>
+
                 <div class="w-100 h-100 x-center">
                     <div class="tapes">
-                        <div class="tape"><a href="" aria-label="temporary link"></a></div>
-                        <div class="tape"><a href="" aria-label="temporary link"></a></div>
-                        <div class="tape"><a href="" aria-label="temporary link"></a></div>
+
+                        <div class="tape">
+                            <a aria-label="See Abbeyfield project work" onclick="showProjectPage('abbeyfield')"></a>
+                            <div class="tape-back"></div>
+                            <div class="tape-middle" style="background-image:url(public/Abbeyfield_logo.jpg); background-position: center;"></div>
+                            <div class="tape-middle sheen"></div>
+                            <div class="tape-front"></div>
+                        </div>
+
+                        <div class="tape">
+                            <a aria-label="See Umbraco CMS project work" onclick="showProjectPage('umbraco')"></a>
+                            <div class="tape-back"></div>
+                            <div class="tape-middle" style="background-image:url(public/umbraco-logo.svg); background-color: ghostwhite;"></div>
+                            <div class="tape-middle sheen"></div>
+                            <div class="tape-front"></div>
+                        </div>
+
+                        <div class="tape">
+                            <a aria-label="See PhishTackle-API project work" onclick="showProjectPage('phishtackleAPI')"></a>
+                            <div class="tape-back"></div>
+                            <div class="tape-middle" style="background-image:url(public/PhishTackleAPI-CD.png); background-color: ghostwhite;">></div>
+                            <div class="tape-middle sheen"></div>
+                            <div class="tape-front"></div>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -188,24 +296,36 @@
                     <h1 class="display-4">Contact me</h1>
                 </div>
 
-                <form class="contact-form" asp-action="submit_contact_form" asp-controller="Home">
+                <form class="contact-form" method="post" asp-action="Index" asp-controller="Home" role="form">
+
+                    @if (Model.HasSuccessMessage)
+                    {
+                        <div class="messages">
+                            <p class="alert">
+                                @Model.SuccessMessage
+                            </p>
+                            <div class="strobe">
+                            </div>
+                        </div>
+                    }
+
                     <div class="form-group name">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
+                        <label asp-for="Name" for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" asp-for="Name" required>
                     </div>
                     <div class="group-row">
                         <div class="form-group email">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-input">
+                            <label asp-for="Email" for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" asp-for="Email">
                         </div>
                         <div class="form-group phone">
-                            <label for="phone" class="form-label">Phone</label>
-                            <input type="tel" id="phone" name="phone" class="form-input">
+                            <label asp-for="Phone" for="phone" class="form-label">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" inputmode="tel" asp-for="Phone">
                         </div>
                     </div>
                     <div class="form-group message">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                        <label asp-for="Message" for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="5" asp-for="Message" required></textarea>
                     </div>
                     <button type="submit" class="form-button">Submit</button>
                 </form>
@@ -220,8 +340,118 @@
                 </div>
             </section>
         </div>
+    </div>
+
+    <div class="hidden-pages">
+
+        <div class="hidden-page" id="techne_diversity">
+            <div class="hidden-page-nav">
+                <div class="hidden-page-nav-title"><p>Techne Diversity</p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+            </div>
+            <div class="hidden-page-content">
+                <section id="PhishTackleAPI_development">
+                    <div class="paragraph">
+                        <h1>H1-TAG content goes here</h1>
+                        <h2>H2-TAG content goes here</h2>
+                        <h3>H3-TAG content goes here</h3>
+                        <h4>H4-TAG content goes here</h4>
+                        <p>P-TAG content goes here</p>
+                        <a href="https://google.com" target="_blank">a-TAG content goes here</a>
+                    </div>
+
+                    <div class="paragraph">
+                        <h1>H1-TAG content goes here</h1>
+                        <h2>H2-TAG content goes here</h2>
+                        <h3>H3-TAG content goes here</h3>
+                        <h4>H4-TAG content goes here</h4>
+                        <p>P-TAG content goes here</p>
+                        <a href="https://google.com" target="_blank">a-TAG content goes here</a>
+                    </div>
+
+                    <div class="image">
+                        <img src="/public/pfp_landscape.png" />
+                    </div>
+
+                    <div class="image-text">
+                        <div class="paragraph">
+                            <h1>H1-TAG content goes here</h1>
+                            <h2>H2-TAG content goes here</h2>
+                            <h3>H3-TAG content goes here</h3>
+                            <h4>H4-TAG content goes here</h4>
+                            <p>P-TAG content goes here</p>
+                            <a href="https://google.com" target="_blank">a-TAG content goes here</a>
+                        </div>
+                        <div class="image">
+                            <img src="/public/about_me_pfp.png" />
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="hidden-page" id="wessex_internet">
+            <div class="hidden-page-nav">
+                <div class="hidden-page-nav-title"><p>Wessex Internet</p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+            </div>
+            <div class="hidden-page-content">
+                <section id="PhishTackleAPI_development">
+                    <p>content goes here</p>
+                </section>
+            </div>
+        </div>
+
+        <div class="hidden-page" id="onewelbeck">
+            <div class="hidden-page-nav">
+                <div class="hidden-page-nav-title"><p>OneWelbeck Healthcare</p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+            </div>
+            <div class="hidden-page-content">
+                <section id="PhishTackleAPI_development">
+                    <p>content goes here</p>
+                </section>
+            </div>
+        </div>
+
+        <div class="hidden-page" id="abbeyfield">
+            <div class="hidden-page-nav">
+                <div class="hidden-page-nav-title"><p>Abbeyfield Retirement Living</p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+            </div>
+            <div class="hidden-page-content">
+                <section id="PhishTackleAPI_development">
+                    <p>content goes here</p>
+                </section>
+            </div>
+        </div>
+
+        <div class="hidden-page" id="umbraco">
+            <div class="hidden-page-nav">
+                <div class="hidden-page-nav-title"><p>Umbraco CMS</p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+            </div>
+            <div class="hidden-page-content">
+                <section id="PhishTackleAPI_development">
+                    <p>content goes here</p>
+                </section>
+            </div>
+        </div>
+
+        <div class="hidden-page" id="phishtackleAPI">
+            <div class="hidden-page-nav">
+                <div class="hidden-page-nav-title"><p>PhishTackle-API</p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+            </div>
+            <div class="hidden-page-content">
+                <section id="PhishTackleAPI_development">
+                    <p>content goes here</p>
+                </section>
+            </div>
+        </div>
 
     </div>
+
 </div>
 
 <script src="/js/homePage.js"></script>
