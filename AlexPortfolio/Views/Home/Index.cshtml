@@ -28,12 +28,6 @@
             <div class="bottom-right"></div>
         </div>
 
-        <div class="section-advance">
-            <a class="advance button">
-                <div class="triangle"></div>
-            </a>
-        </div>
-
         <div class="overlay-timer">
             <p>
                 <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>:<span id="tens">00</span>
@@ -179,7 +173,7 @@
                                     Placement Fullstack Developer • thehumantech Agency <span class="move-right">➼</span>
                                 </div>
                                 <div class="job-description">
-                                    Supporting clients daily through the support queue, building reactive CMS first web pages with a variety of frontend JS fameworks and developing blocks and tools in ASP.Net and .NetCore
+                                    Supporting clients daily through the support queue, building reactive CMS first web pages with a variety of frontend JS fameworks and developing blocks and tools in ASP.Net and .NET Core.
                                 </div>
                                 <ul class="skills">
                                     <li class="skill">HTML</li>
@@ -199,7 +193,11 @@
                             </div>
                         </div>
 
-
+                        <div class="get-in-touch text-center">
+                            <a href="#contact_me" aria-label="Link to contact me page" label="Link to contact me page"></a>
+                            <h2>Think your company should be on here?</h2>
+                            <h2>Get in touch!</h2>
+                        </div>
                     </div>
 
                 </div>
@@ -220,25 +218,25 @@
                     <div class="tapes">
 
                         <div class="tape">
+                            <a aria-label="See PhishTackle-API project work" onclick="showProjectPage('phishtackleAPI')"></a>
+                            <div class="tape-back"></div>
+                            <div class="tape-middle" style="background-image:url(public/PhishTackleAPI-CD.png); background-color: ghostwhite;">></div>
+                            <div class="tape-middle sheen"></div>
+                            <div class="tape-front"></div>
+                        </div>
+
+                        <div class="tape">
+                            <a aria-label="See Umbraco CMS project work" onclick="showProjectPage('umbraco')"></a>
+                            <div class="tape-back"></div>
+                            <div class="tape-middle" style="background-image:url(public/umbraco-logo.svg); background-color: ghostwhite;"></div>
+                            <div class="tape-middle sheen"></div>
+                            <div class="tape-front"></div>
+                        </div>
+
+                        <div class="tape">
                             <a aria-label="See Techne Diversity project work" onclick="showProjectPage('techne_diversity')"></a>
                             <div class="tape-back"></div>
                             <div class="tape-middle" style="background-image:url(public/techne.jpg); background-size: contain; background-color: whitesmoke;"></div>
-                            <div class="tape-middle sheen"></div>
-                            <div class="tape-front"></div>
-                        </div>
-
-                        <div class="tape">
-                            <a aria-label="See Wessex Internet project work" onclick="showProjectPage('wessex_internet')"></a>
-                            <div class="tape-back"></div>
-                            <div class="tape-middle" style="background-image:url(public/wessexInternet.png); background-position: center;"></div>
-                            <div class="tape-middle sheen"></div>
-                            <div class="tape-front"></div>
-                        </div>
-
-                        <div class="tape">
-                            <a aria-label="See Onewelbeck project work" onclick="showProjectPage('onewelbeck')"></a>
-                            <div class="tape-back"></div>
-                            <div class="tape-middle" style="background-image:url(public/onewelbeck.jpg); background-position: center;"></div>
                             <div class="tape-middle sheen"></div>
                             <div class="tape-front"></div>
                         </div>
@@ -262,25 +260,25 @@
                     <div class="tapes">
 
                         <div class="tape">
+                            <a aria-label="See Wessex Internet project work" onclick="showProjectPage('wessex_internet')"></a>
+                            <div class="tape-back"></div>
+                            <div class="tape-middle" style="background-image:url(public/wessexInternet.png); background-position: center;"></div>
+                            <div class="tape-middle sheen"></div>
+                            <div class="tape-front"></div>
+                        </div>
+
+                        <div class="tape">
+                            <a aria-label="See Onewelbeck project work" onclick="showProjectPage('onewelbeck')"></a>
+                            <div class="tape-back"></div>
+                            <div class="tape-middle" style="background-image:url(public/onewelbeck.jpg); background-position: center;"></div>
+                            <div class="tape-middle sheen"></div>
+                            <div class="tape-front"></div>
+                        </div>
+
+                        <div class="tape">
                             <a aria-label="See Abbeyfield project work" onclick="showProjectPage('abbeyfield')"></a>
                             <div class="tape-back"></div>
                             <div class="tape-middle" style="background-image:url(public/Abbeyfield_logo.jpg); background-position: center;"></div>
-                            <div class="tape-middle sheen"></div>
-                            <div class="tape-front"></div>
-                        </div>
-
-                        <div class="tape">
-                            <a aria-label="See Umbraco CMS project work" onclick="showProjectPage('umbraco')"></a>
-                            <div class="tape-back"></div>
-                            <div class="tape-middle" style="background-image:url(public/umbraco-logo.svg); background-color: ghostwhite;"></div>
-                            <div class="tape-middle sheen"></div>
-                            <div class="tape-front"></div>
-                        </div>
-
-                        <div class="tape">
-                            <a aria-label="See PhishTackle-API project work" onclick="showProjectPage('phishtackleAPI')"></a>
-                            <div class="tape-back"></div>
-                            <div class="tape-middle" style="background-image:url(public/PhishTackleAPI-CD.png); background-color: ghostwhite;">></div>
                             <div class="tape-middle sheen"></div>
                             <div class="tape-front"></div>
                         </div>
@@ -296,7 +294,7 @@
                     <h1 class="display-4">Contact me</h1>
                 </div>
 
-                <form class="contact-form" method="post" asp-action="Index" asp-controller="Home" role="form">
+                <form class="contact-form" method="post" asp-action="Index" asp-controller="Home">
 
                     @if (Model.HasSuccessMessage)
                     {
@@ -311,23 +309,23 @@
 
                     <div class="form-group name">
                         <label asp-for="Name" for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="form-input" asp-for="Name" required>
+                        <input type="text" id="name" name="name" class="form-input" asp-for="Name" role="textbox" required>
                     </div>
                     <div class="group-row">
                         <div class="form-group email">
                             <label asp-for="Email" for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-input" asp-for="Email">
+                            <input type="email" id="email" name="email" class="form-input" role="textbox" asp-for="Email">
                         </div>
                         <div class="form-group phone">
                             <label asp-for="Phone" for="phone" class="form-label">Phone</label>
-                            <input type="tel" id="phone" name="phone" class="form-input" inputmode="tel" asp-for="Phone">
+                            <input type="tel" id="phone" name="phone" class="form-input" inputmode="tel" role="textbox" asp-for="Phone">
                         </div>
                     </div>
                     <div class="form-group message">
                         <label asp-for="Message" for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-textarea" rows="5" asp-for="Message" required></textarea>
+                        <textarea id="message" name="message" class="form-textarea" rows="5" asp-for="Message" role="textbox" required></textarea>
                     </div>
-                    <button type="submit" class="form-button">Submit</button>
+                    <button type="submit" class="form-button" role="button">Submit</button>
                 </form>
 
                 <div class="socials">
@@ -344,9 +342,189 @@
 
     <div class="hidden-pages">
 
+        <div class="hidden-page" id="phishtackleAPI">
+            <div class="hidden-page-nav">
+                <div class="hidden-page-nav-title"><p>PhishTackle-API</p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+            </div>
+            <div class="hidden-page-content">
+                <section id="PhishTackleAPI_development">
+                    <div class="image hidden-fw">
+                        <div class="phishtackle-replacement-text">
+                            <h1>PhishTackle-API</h1>
+                        </div>
+                        <img class="position-relative" style="top:-2rem;" src="/public/Background-Beach-Fish.png" />
+                    </div>
+
+                    <div class="paragraph">
+                        <h1>What is PhishTackle-API?</h1>
+                        <p><a href="https://github.com/EWAalEx/PhishTackle-API" target="_blank" label="link to PhishTackle-API GitHub" aria-label="link to PhishTackle-API GitHub">PhishTackle-API</a> is the combination of machine learning and cyber security phishing detection. Phsihtackle-API is a restful API created as the actionable artefact of my dissertation final project as a demonstraightion of the effectiveness of machine learning and its implications within cyber security and its capability to expand on currently existing security solutions without comprimising pre-established security integrity.</p>
+                        <p>Utilising the processing power of machine learning along with the lightweight framework of Node.js restful applications a restful API was created with accompanying web application capable of analysing high level natural langue for traits indicitive of phishing attacks.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <h1>Development</h1>
+                        <h2>The models</h2>
+                        <p>PhishTackle-API models were created using the Scikit-Learn python library for training 2 machine learning models trained on email and text messages content and Urls respectively from a variety of sources including <a href="https://phishtank.org/" label="link to phishtank.org a public reposity of phishing websites" aria-label="link to phishtank.org a public reposity of phishing websites">phishtank.org</a> and the indepth evaluation of different meta-heuristics (stages of preprocessing that indicate how a model should interpret data) to create a tool capable of quickly analysing text based data and producing a binary classification result and float representation of its certainty.</p>
+                        <p>Models were evaluated by first defining and ranking a series of evaluatable data points for their affect on the final effectiveness of the models. After compiling a list of evaluatable points an <a href="https://docs.google.com/spreadsheets/d/1bDp-qnndNPlwTYY_EgJyibEnvVtv9daqBoObuxtPI5U/edit?usp=sharing" label="Link to the Excel sheet utilised for evaluatining machine learning models for PhishTackle-API" aria-label="Link to the Excel sheet utilised for evaluatining machine learning models for PhishTackle-API">Excel Sheet</a> was created for the quick analysis and ranking of different innitial models and their meta-heuristic parameters.</p>
+                        <div class="table desktop-only">
+                            <h4>Model analysis vector rankings and their effects on final model</h4>
+                            <style>
+                                table td, table th {
+                                    font-size: smaller;
+                                    border: 1px solid black;
+                                    line-height: 1.4;
+                                    padding: 10px 10px;
+                                }
+                            </style>
+                            <table><thead><tr><td>ID</td><td>Statistic</td><td>Effect on final model</td><td>Importance</td></tr></thead><tbody><tr><td>1</td><td>Minimising False Phishing</td><td>Reducing False Phishing statistics ensures safe emails are not being classified as phishing.</td><td>2</td></tr><tr><td>2</td><td>Minimising False Safe</td><td>Reducing False Safe statistics ensures phishing emails are not incorrectly classified as safe.</td><td>1</td></tr><tr><td>3</td><td>Maximising model “score”</td><td>Score is an automatically calculated accuracy that calculates total data correctly labelled divided by total data checked. Unbalanced datasets may produce high scores by always assuming the same result.</td><td>11</td></tr><tr><td>4</td><td>Maximising Phishing Precision</td><td>Maximising phishing Precision ensures data that is labelled as phishing is in fact phishing. This may lead to many phishing data values not being classified as such but all values that are labelled as phishing are correctly labelled.</td><td>4</td></tr><tr><td>5</td><td>Maximising Phishing Recall</td><td>Maximising phishing Recall ensures all data that should be labelled as phishing is labelled as phishing. However, this may lead to many safe data values being labelled as phishing.</td><td>3</td></tr><tr><td>6</td><td>Maximising Safe Precision</td><td>Maximising safe Precision ensures data that is labelled as safe is in fact safe. This may lead to many safe data values not being classified as safe but all values that are labelled as safe are correctly labelled. This could cause many safe emails to be blocked by existing security systems utilising this model.</td><td>6</td></tr><tr><td>7</td><td>Maximising Safe Recall</td><td>Maximising safe Recall ensures all data that should be labelled as safe is labelled as safe. However, this may lead to many phishing data values not being caught by the model.</td><td>5</td></tr><tr><td>8</td><td>Maximising F1 Score</td><td>F1 score is an indicator of how healthy a model is. This does not take into account if recall is being sacrificed for precision and so if one of the 2 values were low, F1 would reflect that even if the other is 100%.</td><td>7</td></tr><tr><td>9</td><td>Maximising Phishing Accuracy</td><td>Maximising phishing accuracy would indicate all phishing data is being caught and processed correctly. However, this may ignore overfitting where all data is considered phishing.</td><td>8</td></tr><tr><td>10</td><td>Maximising Safe Accuracy</td><td>Maximising safe accuracy would indicate all safe data is being analysed and processed correctly. However, this may ignore overfitting where all data is considered safe.</td><td>9</td></tr><tr><td>11</td><td>Maximising Cumulative Model Accuracy</td><td>Cumulative model accuracy is the mean value of the individual label accuracies and shows a best representation of if one accuracy is overfitting. For instance, if one label had a 100% accuracy and the other was 0% the cumulative model accuracy would be 50% as the model only gets half the data right.</td><td>10</td></tr></tbody></table>
+                        </div>
+                        <p>After he creation and analysis of the different models the skl2onnx library is used to convert trainedmodels into the .onnx format capable of implimentation and use within the Node.js OnnxRuntime enviroment capable of analysing new data matching the expected input vectors without the need for re-training creating a mostly lightweight machine learning program that is capable of handing processing on a seperate server instead of the end users system.</p>
+                        <div class="image onnx-logo">
+                            <img src="/public/onnx-runtime.png" alt="logo for onnx runtime" />
+                            <img src="/public/scikit_learn_logo.png" alt="logo for sci kit learn" />
+                        </div>
+
+                        <div class="image-text mt-3">
+                            <div class="paragraph">
+                                <h2>The API</h2>
+                                <p>The API was developed in Node.js and Express.js following RESTful API development standards outlined on <a href="https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/" label="link to stack overflow page of restful api development standards" aria-label="link to stack overflow page of restful api development standards">Stack Overflow</a>. To ensure these standards were followed a strong foundation was required which is why to begin development I first created a generic restful API that could hangle GET, POST, PATCH and DELETE requests and retrieve and update data from a simple JSON database, this was both to ensure standards were established early in development and also due to the fact when this project was started the end user interactions with the project had not been completely established as there was no end client to provide goals or expected usage for the end product.</p>
+                                <p>For the establishing of the API's pathways and final uses, an internal API Use Flow was created demonstraighting how data should be handled and passed to relevant functions. This was an important step as all 3 paths to this project were completed simultaniously and this would better allow a skeleton to be fully created before the machine learning models were finished continuing development during lerger processing or training periods.</p>
+                            </div>
+                            <div class="image dw-50">
+                                <img src="/public/API_Internal_flow.png" />
+                            </div>
+                        </div>
+                        
+                        
+                        <h2>The accompanying Web App</h2>
+                        <div class="image-text mt-3">
+                            <div class="paragraph">
+                                <p>For the purposes of the project outlined the web application was not intended as a finalised product but instead as a slimmed down demonstration of how the API could be used and to demonstraight the effectiveness of the trained models, to this purpose the web application is specifically designed to be as simple to use as possible and clearly display API responses for analysis.</p>
+                                <p>After the completion of the basic web app and it's innitial connection to the API a final Use Flow was created to plan how the API should handle requests before any processing is performed, this was completed to not only add some further structure to the API and its request handing but also to put in place some quality of life functionality to the API, these included a caching policy and a rate limiting function.</p>
+                            </div>
+                            <div class="image dw-50" >
+                                <img src="/public/WebApp_design.png" />
+                            </div>
+                        </div>
+
+                        <div class="image mt-3 gap-3">
+                            <img src="/public/API_Use_flow.png" class="dw-50" />
+                            <img src="/public/PhishTackle-API_Demo_WebApp.png" class="dw-50" />
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="hidden-page" id="umbraco">
+            <div class="hidden-page-nav">
+                <div class="hidden-page-nav-title"><p>Umbraco CMS</p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+            </div>
+            <div class="hidden-page-content">
+                <section id="umbraco_development">
+                    <div class="image hidden-fw">
+                        <img class="position-relative" style="top:-2rem;" src="/public/umbraco_fw.png" />
+                    </div>
+                    <p>content goes here</p>
+                </section>
+            </div>
+        </div>
+
         <div class="hidden-page" id="techne_diversity">
             <div class="hidden-page-nav">
                 <div class="hidden-page-nav-title"><p>Techne Diversity</p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+            </div>
+            <div class="hidden-page-content">
+                <section id="techne_diversity_development">
+
+                    <div class="image hidden-fw">
+                        <div class="techne-replacement-text">
+                            <img src="/public/techne.svg" />
+                            <h1>The craft of research in the arts and humanities</h1>
+                        </div>
+                        <img class="position-relative rainbow-animate" style="top:-2rem;" src="/public/techne-noText.png" />
+                    </div>
+
+                    <div class="image-text">
+                        <div class="image">
+                            <img class="rainbow-animate" src="/public/medusa-pop.jpg" />
+                        </div>
+
+                        <div class="paragraph">
+                            <h1>What is the Diversity Hub?</h1>
+                            <p>The <a href="https://www.technediversity.co.uk/" target="_blank">Techne Diversity Hub</a> is a website created by technē to aid in providing funding and support to PhD students working in Arts and Humanities disciplins. The Diversity Hub itself specifically focuses on supporting students of colour aiming to aid with and improve on the inclusion issues found in many postgraduate research schemes.</p>
+                            <p>This project was particularly important to me, both due to the message of the client I believe being an important one and also due to the fact that this was one of the very first projects I was given to work on after the completion of my learning of the basics of ASP.NET, MVC and CMS development principles. Working on this project I was truly joining the team of developers at thehumantech agency I had been learning beside and becoming friends with over the past few months, no longer working on pre-existing websites and bug fixes with the occasional new block I was working on a work in progress site building core functionality.</p>
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <h1>What did I do?</h1>
+                        <p>When I first joined the Technē internal team, I was tasked with a bunch of smaller stuff that needed fixing or wasnt quite how the client would like it such as images not appearing if they were too large for the JavaScript to detect them as being in frame and all of the applications being labelled as having been created by the lead developer (even if they werent!). I quickly got to work fixng these bugs working closely with their acocunt manager ensuring they had an up to date visual on their websites progress.</p>
+                        <p>After the completion of these innitial issues I was then given the oppertunity to start bulding some of the core functionality for the website, building an email function in the C# backend for informing mentors when a new mentee application was creates with the contact details provided from the application and for informing mentees when their applciation is responded to. After the creation of the email functioality I began working on an Umbraco redirection component built using Umbraco compositions and non-specific code allowing it's use across multiple different Umbraco 11 websites with minimal code changes to the .cshtml files,the module worked by allowing the optional use of an end date for the redirect and optional redirection page which if not provided would default to directing to a generic "This page is not avaliable, this page will be avaliable on DD/MM/YYYY" page which with minimal styling could comfortably fit in with any existing sites.</p>
+                    </div>
+                    <div class="image">
+                        <img src="~/public/redirect-page-techne.png" />
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="hidden-page" id="wessex_internet">
+            <div class="hidden-page-nav">
+                <div class="hidden-page-nav-title"><p>Wessex Internet</p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+            </div>
+            <div class="hidden-page-content">
+                <section id="wessex_internet_development">
+                    <div class="image hidden-fw">
+                        <img class="position-relative" style="top:-2rem; width: 100%;" src="/public/wessexInternet-splash.jpeg" />
+                    </div>
+
+                    <div class="paragraph">
+                        <h1>Who are Wessex Internet?</h1>
+                        <p><a href="https://www.wessexinternet.com/" target="_blank">Wessex Interet</a> is a company dedicated to giving full fiber internet to places previously neglected such as the country side at a fast speed and an affordable price. Wessex Interntet works with the government to ensure no matter how rural internet is accessible wherever you are, working to chip away byte by byte to the digital divide.</p>
+                        <p>During my time at thehumantech agency Wessex Internet was one of my consistent clients always looking to update their site to be just right, and always open to new ideas and recommendations of ways to improve the look and feel of their website. They also have an inhouse development team that worked to create and maintain an API used within their order journey that was provided to the team at thehumantech agency with some documentation for a joint development project I was given the privilege to work on with 2 other front-end developers.</p>
+                    </div>
+                    
+                    <div class="paragraph">
+                        <h1>Work completed with Wessex Internet?</h1>
+                        <p>During my time working with Wessex Internet many smaller projects were completed with 2 bigger ones sprinkled in. First, was the development and maintainance of blocks and site styling across their website with the creations of setting s toggles for their created blocks that allowed simplified adjustments to be made to existing blocks such as switching the image from left to right without the creation of a completely new block, creating a more streamlined end user eperience, which is always the goal with CMS development.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <h2>The development of a new Site Navigation</h2>
+                        <p>One of the bigger tasks completed with Wessex Internet was the creation of a completely new site navigation for their website which was the first of my solo projects I completed while working at thehumantech agency. The original navigation was a relic of when the sites rediesign was first completed and was not made with all the different links they would eventually want on their navigation and the dropdowns that were eventually required, this meant that the existing navigation was not properly responsive to smaller screen sizes with no hamburger menu alternative for mobile screensizes, the existing navigation no longer satisfied the clients needs and finally the existing navigation was all completely hard coded not ustilising the generic settings page created within the Umbraco CMS specifically for creating data accessible form all pages.</p>
+                        <p>This was solved with the inclusion of new fields into the site settings page for each navigation main link and optional sub navigation links, the redesign of the existing navigation to a more minimalist and modern design and the creation of styling breakpoints capable of adjusting the sites navigation to work with all screensizes.</p>
+                    
+                        <div class="image">
+                            <img class="position-relative mb-4 w-100" src="/public/w-nav-d.png" alt="Image showing desktop view of site navigation with a dropdown highlighted and not highlighted" aria-label="Image showing desktop view of site navigation with a dropdown highlighted and not highlighted" />
+                        </div>
+                        <div class="image">
+                            <img class="position-relative" src="/public/w-nav-m.png" alt="Image showing mobile view of site navigation with a dropdown highlighted and not highlighted" aria-label="Image showing mobile view of site navigation with a dropdown highlighted and not highlighted" />
+                        </div>
+                    </div>
+
+                    <div class="paragraph">
+                        <h2>The development of a new new order journey</h2>
+                        <p>The coup de grâce of my work with Wessex Internet culminated with the development of a new order journey to replace the old Umbraco package based order journey which was producing lower than expected conversion rates and was difficult to keep up to date with their internal packages, vulnerable to tampering and reliant on legacy code following outdated web development principles.</p>
+                        <p>For the development of the new order journey I was a part of a team of 2 other developers tasked with the creation of a angular based order journey aiming to use the flexibility of the framework to build alongside Wessex Internets in-house development team utilising their in development API to create an easy to use, reactive order journey. Throughout the development weekly meetings were had with Wessex Internet and thir developers to ensure the projects progress was going smoothly and any issues that were encountered on either side were recorded in an open document accessible by both teams.</p>
+                        <p>Thorughout dveelopment, a combination Scrum and Feature Based development lifecycle was followed with the account manager and project team working in tandem to produce realistic sprints and carve out an achievable timeline with actionable and functional objectives capable of demonstraighting to the client allowing a constant flow of communication between the teams facilitating the creation of a product the clients were immediately satisfied with.</p>
+                        
+                        <div class="image">
+                            <img class="position-relative" src="/public/Wessex-order-journey-home.png" alt="Image showing the Wessex Internet order journey box on the home page" aria-label="Image showing the Wessex Internet order journey box on the home page" />
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+
+        <div class="hidden-page" id="onewelbeck">
+            <div class="hidden-page-nav">
+                <div class="hidden-page-nav-title"><p>OneWelbeck Healthcare</p></div>
                 <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
             </div>
             <div class="hidden-page-content">
@@ -390,57 +568,9 @@
             </div>
         </div>
 
-        <div class="hidden-page" id="wessex_internet">
-            <div class="hidden-page-nav">
-                <div class="hidden-page-nav-title"><p>Wessex Internet</p></div>
-                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
-            </div>
-            <div class="hidden-page-content">
-                <section id="PhishTackleAPI_development">
-                    <p>content goes here</p>
-                </section>
-            </div>
-        </div>
-
-        <div class="hidden-page" id="onewelbeck">
-            <div class="hidden-page-nav">
-                <div class="hidden-page-nav-title"><p>OneWelbeck Healthcare</p></div>
-                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
-            </div>
-            <div class="hidden-page-content">
-                <section id="PhishTackleAPI_development">
-                    <p>content goes here</p>
-                </section>
-            </div>
-        </div>
-
         <div class="hidden-page" id="abbeyfield">
             <div class="hidden-page-nav">
                 <div class="hidden-page-nav-title"><p>Abbeyfield Retirement Living</p></div>
-                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
-            </div>
-            <div class="hidden-page-content">
-                <section id="PhishTackleAPI_development">
-                    <p>content goes here</p>
-                </section>
-            </div>
-        </div>
-
-        <div class="hidden-page" id="umbraco">
-            <div class="hidden-page-nav">
-                <div class="hidden-page-nav-title"><p>Umbraco CMS</p></div>
-                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
-            </div>
-            <div class="hidden-page-content">
-                <section id="PhishTackleAPI_development">
-                    <p>content goes here</p>
-                </section>
-            </div>
-        </div>
-
-        <div class="hidden-page" id="phishtackleAPI">
-            <div class="hidden-page-nav">
-                <div class="hidden-page-nav-title"><p>PhishTackle-API</p></div>
                 <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
             </div>
             <div class="hidden-page-content">

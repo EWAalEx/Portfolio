@@ -102,6 +102,10 @@ body {
     font-family: roboto;
 }
 
+.dw-50 {
+    width: 50% !important;
+}
+
 .dark ::-moz-selection { /* Code for Firefox */
     color: #000000;
     background: rgb(56, 216, 29);
@@ -126,8 +130,16 @@ body {
     color: #f8f8ff;
 }
 
+.dark td {
+    color: #f8f8ff;
+}
+
 .light .page-content h1, .light .page-content h2, .light .page-content h3, .light .page-content h4, .light .page-content h5, .light .page-content p {
     color: black;
+}
+
+.light td {
+    color: #000000;
 }
 
 .light #theme-toggle .theme-glow {
@@ -816,6 +828,11 @@ body {
         color: #f8f8ff;
     }
 
+    .light .contact-form .form-button:focus {
+        background: #00000090;
+        color: #f8f8ff;
+    }
+
 .dark .contact-form .form-group.message #message {
     border-radius: 1rem;
     border: #f8f8ff solid 2px;
@@ -842,6 +859,11 @@ body {
 
     .dark .contact-form .form-button:hover {
         cursor: pointer;
+        background: #ffffff90;
+        color: #000000;
+    }
+
+    .dark .contact-form .form-button:focus {
         background: #ffffff90;
         color: #000000;
     }
@@ -1238,8 +1260,36 @@ section#experience {
             }
 
     section#experience .experiences {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
         width: 100%;
     }
+
+        section#experience .experiences * {
+            position: relative;
+        }
+
+        section#experience .experiences .get-in-touch {
+            width: calc(100% - 1rem);
+            padding: 1rem;
+            border-radius: 1rem;
+            backdrop-filter: blur(5px);
+        }
+
+            section#experience .experiences .get-in-touch:hover {
+                cursor: pointer;
+            }
+
+            section#experience .experiences .get-in-touch a {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 5;
+                text-decoration: none;
+            }
 
         section#experience .experiences .experience {
             border-radius: 2rem;
@@ -1249,7 +1299,7 @@ section#experience {
             flex-direction: row;
             align-items: flex-start;
             gap: 1rem;
-            width: calc(100% - 2rem);
+            width: calc(100% - 1rem);
         }
 
             section#experience .experiences .experience .move-right {
@@ -1313,6 +1363,30 @@ section#experience {
     color: #000000;
 }
 
+    .light section#experience .experiences .get-in-touch {
+        border: black solid 2px;
+        background: #ffffff08;
+        color: #000000;
+    }
+
+        .light section#experience .experiences .get-in-touch:hover {
+            background: #00000090;
+            color: #f8f8ff;
+        }
+
+            .light section#experience .experiences .get-in-touch:hover h2 {
+                color: #f8f8ff;
+            }
+
+        .light section#experience .experiences .get-in-touch:target {
+            background: #00000090;
+            color: #f8f8ff;
+        }
+
+            .light section#experience .experiences .get-in-touch:target h2 {
+                color: #f8f8ff;
+            }
+
     .light section#experience .experiences .experience:hover {
         background: rgba(157, 156, 156, 0.4);
         box-shadow: inset 0px 2px 4px -4px #000000;
@@ -1338,6 +1412,30 @@ section#experience {
 .dark section#experience .experiences {
     color: #f8f8ff;
 }
+
+    .dark section#experience .experiences .get-in-touch {
+        border: #f8f8ff solid 2px;
+        background: #ffffff08;
+        color: #f8f8ff;
+    }
+
+        .dark section#experience .experiences .get-in-touch:hover {
+            background: #ffffff90;
+            color: #000000;
+        }
+
+            .dark section#experience .experiences .get-in-touch:hover h2 {
+                color: #000000;
+            }
+
+        .dark section#experience .experiences .get-in-touch:target {
+            background: #ffffff90;
+            color: #000000;
+        }
+
+            .dark section#experience .experiences .get-in-touch:target h2 {
+                color: #000000;
+            }
 
     .dark section#experience .experiences .experience:hover {
         background: rgba(45, 45, 45, 0.5);
@@ -1418,7 +1516,7 @@ section#experience {
         .hidden-pages .hidden-page .hidden-page-content {
             width: 100%;
             height: 100%;
-            padding: 0 2rem 0 2rem;
+            padding: 0 2rem 1rem 2rem;
             overflow: auto;
         }
 
@@ -1439,15 +1537,66 @@ section#experience {
                 }
 
             .hidden-pages .hidden-page .hidden-page-content .image {
+                position: relative;
                 width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
 
+                .hidden-pages .hidden-page .hidden-page-content .image.onnx-logo img {
+                    width: 40%
+                }
+
+                .hidden-pages .hidden-page .hidden-page-content .image.hidden-fw {
+                    width: calc(100% + 4rem);
+                    left: -2rem;
+                }
+
+                    .hidden-pages .hidden-page .hidden-page-content .image.hidden-fw img {
+                        width: 100%;
+                    }
+
                 .hidden-pages .hidden-page .hidden-page-content .image * {
                     width: 90%;
                 }
+
+                .hidden-pages .hidden-page .hidden-page-content .image .dw-50 {
+                    width: 50%;
+                }
+
+                .hidden-pages .hidden-page .hidden-page-content .image .phishtackle-replacement-text {
+                    left: 0;
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    bottom: 2rem;
+                    height: 100%;
+                    align-items: center;
+                    position: absolute;
+                    z-index: 2;
+                    margin: 0;
+                }
+
+                    .hidden-pages .hidden-page .hidden-page-content .image .phishtackle-replacement-text h1 {
+                        display: flex;
+                        justify-content: center;
+                        font-size: 5em;
+                    }
+
+                .hidden-pages .hidden-page .hidden-page-content .image .techne-replacement-text {
+                    position: absolute;
+                    z-index: 2;
+                    width: 65%;
+                    left: 10%;
+                    margin: 0;
+                    bottom: 25%;
+                }
+
+                    .hidden-pages .hidden-page .hidden-page-content .image .techne-replacement-text h1 {
+                        color: #000000;
+                        color: #000000;
+                    }
 
             .hidden-pages .hidden-page .hidden-page-content .image-text {
                 display: flex;
@@ -1530,6 +1679,29 @@ section#experience {
             color: #000000;
         }
 
+            .dark .hidden-pages .hidden-page .hidden-page-content .image.onnx-logo {
+                filter: invert(0);
+            }
+
+            .dark .hidden-pages .hidden-page .hidden-page-content::-webkit-scrollbar-thumb {
+                background: rgb(56, 216, 29);
+                border-radius: 10px;
+            }
+
+                .dark .hidden-pages .hidden-page .hidden-page-content::-webkit-scrollbar-thumb:hover {
+                    background: rgb(38 147 20);
+                }
+
+            .dark .hidden-pages .hidden-page .hidden-page-content .table {
+                color: #000000;
+                border-color: #000000;
+            }
+
+                .dark .hidden-pages .hidden-page .hidden-page-content .table table td {
+                    color: #000000;
+                    border-color: #000000;
+                }
+
 .light .hidden-pages {
     box-shadow: 0px 0px 10px 0px rgb(48, 0, 226);
 }
@@ -1542,25 +1714,47 @@ section#experience {
             color: #f8f8ff;
         }
 
+            .light .hidden-pages .hidden-page .hidden-page-content .image.onnx-logo {
+                filter: invert(1);
+            }
+
             .light .hidden-pages .hidden-page .hidden-page-content::-webkit-scrollbar-thumb {
-                background: rgb(56, 216, 29);
+                background: rgb(48, 0, 226);
                 border-radius: 10px;
             }
 
                 .light .hidden-pages .hidden-page .hidden-page-content::-webkit-scrollbar-thumb:hover {
-                    background: rgb(38 147 20);
+                    background: rgb(33 0 155);
                 }
 
-.dark .hidden-pages .hidden-page .hidden-page-content::-webkit-scrollbar-thumb {
-    background: rgb(48, 0, 226);
-    border-radius: 10px;
+            .light .hidden-pages .hidden-page .hidden-page-content .table {
+                color: #f8f8ff;
+                border-color: #f8f8ff;
+            }
+
+                .light .hidden-pages .hidden-page .hidden-page-content .table table td {
+                    color: #f8f8ff;
+                    border-color: #f8f8ff;
+                }
+
+.rainbow-animate {
+    animation: rainbow-cycle linear 4s infinite;
 }
 
-    .dark .hidden-pages .hidden-page .hidden-page-content::-webkit-scrollbar-thumb:hover {
-        background: rgb(33 0 155);
+@media only screen and (min-width: 2560px) {
+
+    .hidden-pages .hidden-page .hidden-page-content .image .phishtackle-replacement-text h1 {
+        font-size: 9em;
     }
 
-@media only screen and (min-width: 2560px) {
+    .hidden-pages .hidden-page .hidden-page-content .paragraph * {
+        font-size: x-large;
+    }
+
+    .hidden-pages .hidden-page .hidden-page-content .paragraph h1 {
+        font-size: 4em;
+    }
+
     h2 {
         font-size: 4rem;
     }
@@ -1671,9 +1865,46 @@ section#experience {
     section#experience .page-text .paragraph .body-text p {
         font-size: 1em;
     }
+
+    .hidden-pages .hidden-page .hidden-page-content .image .phishtackle-replacement-text h1 {
+        font-size: 3.5em;
+    }
 }
 
 @media only screen and (max-width: 768px) {
+
+    .dw-50 {
+        width: 100% !important;
+    }
+
+    .hidden-pages .hidden-page .hidden-page-content .image .dw-50 {
+        width: 100%;
+    }
+
+    .hidden-pages .hidden-page .hidden-page-content .image .techne-replacement-text {
+        width: 50%;
+        bottom: 50%;
+    }
+
+        .hidden-pages .hidden-page .hidden-page-content .image .techne-replacement-text h1 {
+            display: none;
+        }
+
+    .hidden-pages .hidden-page .hidden-page-content .image .phishtackle-replacement-text h1 {
+        font-size: 3em;
+    }
+
+    .hidden-pages .hidden-page .hidden-page-content .image {
+        flex-direction: column;
+    }
+
+        .hidden-pages .hidden-page .hidden-page-content .image * {
+            width: 100%;
+        }
+
+    .hidden-pages .hidden-page .hidden-page-content .image-text {
+        flex-direction: column;
+    }
 
     .mobile-only {
         display: block;
@@ -1802,6 +2033,14 @@ section#experience {
 
 @media only screen and (max-width: 767px) {
 
+    .desktop-only {
+        display: none;
+    }
+
+    .hidden-pages .hidden-page .hidden-page-content .image .phishtackle-replacement-text h1 {
+        font-size: 2.5em;
+    }
+
     section#about_me .page-text .paragraph .quote p {
         font-size: 1.2em;
     }
@@ -1872,6 +2111,11 @@ section#experience {
 }
 
 @media only screen and (max-width: 425px) {
+
+    .hidden-pages .hidden-page .hidden-page-content .image .phishtackle-replacement-text h1 {
+        font-size: 2em;
+    }
+
     .hidden-pages .hidden-page .hidden-page-nav .hidden-page-nav-title {
         padding-left: 1rem;
         text-align: left;
@@ -1879,6 +2123,11 @@ section#experience {
 }
 
 @media only screen and (max-width: 375px) {
+
+    .hidden-pages .hidden-page .hidden-page-content .image .phishtackle-replacement-text h1 {
+        font-size: 1.5em;
+    }
+
     section#about_me .page-text .paragraph .body-text p {
         font-size: 0.9em;
     }
@@ -1889,6 +2138,10 @@ section#experience {
 }
 
 @media only screen and (max-width: 355px) {
+    .hidden-pages .hidden-page .hidden-page-content .image .phishtackle-replacement-text h1 {
+        font-size: 1em;
+    }
+
     section#about_me .page-text .paragraph .body-text p {
         font-size: 0.8em;
     }
@@ -1947,5 +2200,15 @@ section#experience {
 
     100% {
         transform: translateX(-10%) translateY(-10%);
+    }
+}
+
+@keyframes rainbow-cycle {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
     }
 }
