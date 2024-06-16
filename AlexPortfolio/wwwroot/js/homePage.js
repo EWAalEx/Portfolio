@@ -376,6 +376,9 @@ function closeHiddenPages() {
     }
 }
 
+//hide all pages
+closeHiddenPages();
+
 /// overlay effects
 //for recording
 const recording_dot = document.querySelector("#recording-dot");
@@ -422,5 +425,3 @@ window.onresize = () => (pageLen = pageSetup(pageLen), setUnderline());
 var mousePosition = [0, 0];
 
 document.onmousemove = () => (mousePosition = getMousePosition());
-
-closeHiddenPages();

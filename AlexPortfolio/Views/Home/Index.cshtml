@@ -220,7 +220,8 @@
                         <div class="tape">
                             <a aria-label="See PhishTackle-API project work" onclick="showProjectPage('phishtackleAPI')"></a>
                             <div class="tape-back"></div>
-                            <div class="tape-middle" style="background-image:url(public/PhishTackleAPI-CD.png); background-color: ghostwhite;">></div>
+                            <div class="tape-middle" style="background-image:url(public/PhishTackleAPI-CD.png); background-color: ghostwhite;"></div>
+                            <div class="tape-middle" style="background-image:url(public/PhishTackleAPI-CD.png); background-color: ghostwhite;"></div>
                             <div class="tape-middle sheen"></div>
                             <div class="tape-front"></div>
                         </div>
@@ -276,9 +277,11 @@
                         </div>
 
                         <div class="tape">
-                            <a aria-label="See Abbeyfield project work" onclick="showProjectPage('abbeyfield')"></a>
                             <div class="tape-back"></div>
-                            <div class="tape-middle" style="background-image:url(public/Abbeyfield_logo.jpg); background-position: center;"></div>
+                            <div class="tape-middle">
+                                <img src="~/public/moreComing.svg" alt="svg stating more coming"/>
+                                <img src="~/public/moreComing.svg" alt="svg stating more coming" style="transform: rotate(180deg);" />
+                            </div>
                             <div class="tape-middle sheen"></div>
                             <div class="tape-front"></div>
                         </div>
@@ -344,31 +347,45 @@
 
         <div class="hidden-page" id="phishtackleAPI">
             <div class="hidden-page-nav">
-                <div class="hidden-page-nav-title"><p>PhishTackle-API</p></div>
-                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+                <div class="hidden-page-nav-title"><p>PhishTackle-API <span class="nav-close-token" aria-label="close project page" onclick="closeHiddenPages()">✕</span></p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>✕</p></a>
             </div>
             <div class="hidden-page-content">
                 <section id="PhishTackleAPI_development">
-                    <div class="image hidden-fw">
+                    <div class="image hidden-fw" style="top: -2rem;">
                         <div class="phishtackle-replacement-text">
                             <h1>PhishTackle-API</h1>
                         </div>
-                        <img class="position-relative" style="top:-2rem;" src="/public/Background-Beach-Fish.png" />
+                        <img class="position-relative" src="/public/Background-Beach-Fish.png" />
                     </div>
 
                     <div class="paragraph">
                         <h1>What is PhishTackle-API?</h1>
-                        <p><a href="https://github.com/EWAalEx/PhishTackle-API" target="_blank" label="link to PhishTackle-API GitHub" aria-label="link to PhishTackle-API GitHub">PhishTackle-API</a> is the combination of machine learning and cyber security phishing detection. Phsihtackle-API is a restful API created as the actionable artefact of my dissertation final project as a demonstraightion of the effectiveness of machine learning and its implications within cyber security and its capability to expand on currently existing security solutions without comprimising pre-established security integrity.</p>
-                        <p>Utilising the processing power of machine learning along with the lightweight framework of Node.js restful applications a restful API was created with accompanying web application capable of analysing high level natural langue for traits indicitive of phishing attacks.</p>
+                        <p>
+                            <a href="https://github.com/EWAalEx/PhishTackle-API" target="_blank" label="link to PhishTackle-API GitHub" aria-label="link to PhishTackle-API GitHub">PhishTackle-API</a> is a combination of Machine Learning and Cyber Security phishing detection. PhishTackle-API is a restful API created as the actionable artefact of my dissertation final project to demonstrate the effectiveness of Machine Learning, its implications within Cyber Security and its capability to expand on existing security solutions without compromising pre-established security integrity.
+                        </p>
+                        <p>
+                            Utilising the processing power of Machine Learning alongside the lightweight framework of Node.js restful applications, a restful API was created with an accompanying web application capable of analysing high-level natural language for traits indicative of phishing attacks.
+                        </p>
+                    </div>
+
+                    <div class="image">
+                        <iframe width="2114" height="894" src="https://www.youtube.com/embed/jSifVuXt_Gw" title="Phish-Tackle API demo video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
 
                     <div class="paragraph">
                         <h1>Development</h1>
-                        <h2>The models</h2>
-                        <p>PhishTackle-API models were created using the Scikit-Learn python library for training 2 machine learning models trained on email and text messages content and Urls respectively from a variety of sources including <a href="https://phishtank.org/" label="link to phishtank.org a public reposity of phishing websites" aria-label="link to phishtank.org a public reposity of phishing websites">phishtank.org</a> and the indepth evaluation of different meta-heuristics (stages of preprocessing that indicate how a model should interpret data) to create a tool capable of quickly analysing text based data and producing a binary classification result and float representation of its certainty.</p>
-                        <p>Models were evaluated by first defining and ranking a series of evaluatable data points for their affect on the final effectiveness of the models. After compiling a list of evaluatable points an <a href="https://docs.google.com/spreadsheets/d/1bDp-qnndNPlwTYY_EgJyibEnvVtv9daqBoObuxtPI5U/edit?usp=sharing" label="Link to the Excel sheet utilised for evaluatining machine learning models for PhishTackle-API" aria-label="Link to the Excel sheet utilised for evaluatining machine learning models for PhishTackle-API">Excel Sheet</a> was created for the quick analysis and ranking of different innitial models and their meta-heuristic parameters.</p>
+                        <h2>The Models</h2>
+                        <p>
+                            PhishTackle-API models were created using the Scikit-Learn python library for training 2 Machine Learning models trained on email, text message content and URLs from a variety of sources, including <a href="https://phishtank.org/" label="link to phishtank.org a public reposity of phishing websites" aria-label="link to phishtank.org a public reposity of phishing websites">phishtank.org</a>, and the in-depth evaluation of different meta-heuristics (stages of preprocessing that indicate how a model should interpret data) to create a tool capable of quickly analysing text-based data and producing a binary classification result and float representation of its certainty.
+                        </p>
+                        <p>
+                            Models were evaluated by first defining and ranking a series of evaluable data points for their effect on the final effectiveness of the models. After compiling a list of evaluable points an <a href="https://docs.google.com/spreadsheets/d/1bDp-qnndNPlwTYY_EgJyibEnvVtv9daqBoObuxtPI5U/edit?usp=sharing" label="Link to the Excel sheet utilised for evaluatining machine learning models for PhishTackle-API" aria-label="Link to the Excel sheet utilised for evaluatining machine learning models for PhishTackle-API">Excel Sheet</a> was created to quickly analyse and rank the different initial models and their meta-heuristic parameters.
+                        </p>
                         <div class="table desktop-only">
-                            <h4>Model analysis vector rankings and their effects on final model</h4>
+                            <h4>
+                                Model Analysis Vector Rankings and Their Effects on the Final Model
+                            </h4>
                             <style>
                                 table td, table th {
                                     font-size: smaller;
@@ -377,9 +394,14 @@
                                     padding: 10px 10px;
                                 }
                             </style>
-                            <table><thead><tr><td>ID</td><td>Statistic</td><td>Effect on final model</td><td>Importance</td></tr></thead><tbody><tr><td>1</td><td>Minimising False Phishing</td><td>Reducing False Phishing statistics ensures safe emails are not being classified as phishing.</td><td>2</td></tr><tr><td>2</td><td>Minimising False Safe</td><td>Reducing False Safe statistics ensures phishing emails are not incorrectly classified as safe.</td><td>1</td></tr><tr><td>3</td><td>Maximising model “score”</td><td>Score is an automatically calculated accuracy that calculates total data correctly labelled divided by total data checked. Unbalanced datasets may produce high scores by always assuming the same result.</td><td>11</td></tr><tr><td>4</td><td>Maximising Phishing Precision</td><td>Maximising phishing Precision ensures data that is labelled as phishing is in fact phishing. This may lead to many phishing data values not being classified as such but all values that are labelled as phishing are correctly labelled.</td><td>4</td></tr><tr><td>5</td><td>Maximising Phishing Recall</td><td>Maximising phishing Recall ensures all data that should be labelled as phishing is labelled as phishing. However, this may lead to many safe data values being labelled as phishing.</td><td>3</td></tr><tr><td>6</td><td>Maximising Safe Precision</td><td>Maximising safe Precision ensures data that is labelled as safe is in fact safe. This may lead to many safe data values not being classified as safe but all values that are labelled as safe are correctly labelled. This could cause many safe emails to be blocked by existing security systems utilising this model.</td><td>6</td></tr><tr><td>7</td><td>Maximising Safe Recall</td><td>Maximising safe Recall ensures all data that should be labelled as safe is labelled as safe. However, this may lead to many phishing data values not being caught by the model.</td><td>5</td></tr><tr><td>8</td><td>Maximising F1 Score</td><td>F1 score is an indicator of how healthy a model is. This does not take into account if recall is being sacrificed for precision and so if one of the 2 values were low, F1 would reflect that even if the other is 100%.</td><td>7</td></tr><tr><td>9</td><td>Maximising Phishing Accuracy</td><td>Maximising phishing accuracy would indicate all phishing data is being caught and processed correctly. However, this may ignore overfitting where all data is considered phishing.</td><td>8</td></tr><tr><td>10</td><td>Maximising Safe Accuracy</td><td>Maximising safe accuracy would indicate all safe data is being analysed and processed correctly. However, this may ignore overfitting where all data is considered safe.</td><td>9</td></tr><tr><td>11</td><td>Maximising Cumulative Model Accuracy</td><td>Cumulative model accuracy is the mean value of the individual label accuracies and shows a best representation of if one accuracy is overfitting. For instance, if one label had a 100% accuracy and the other was 0% the cumulative model accuracy would be 50% as the model only gets half the data right.</td><td>10</td></tr></tbody></table>
+                            <table>
+                                <thead><tr><td>ID</td><td>Statistic</td><td>Effect on the Final Model</td><td>Importance</td></tr></thead>
+                                <tbody><tr><td>1</td><td>Minimising False Phishing</td><td>Reducing False Phishing statistics ensures safe emails are not being classified as phishing.</td><td>2</td></tr><tr><td>2</td><td>Minimising False Safe</td><td>Reducing False Safe statistics ensures phishing emails are not incorrectly classified as safe.</td><td>1</td></tr><tr><td>3</td><td>Maximising model “score”</td><td>Score is an automatically calculated accuracy that calculates total data correctly labelled divided by total data checked. Unbalanced datasets may produce high scores by always assuming the same result.</td><td>11</td></tr><tr><td>4</td><td>Maximising Phishing Precision</td><td>Maximising phishing Precision ensures data that is labelled as phishing is in fact phishing. This may lead to many phishing data values not being classified as such but all values that are labelled as phishing are correctly labelled.</td><td>4</td></tr><tr><td>5</td><td>Maximising Phishing Recall</td><td>Maximising phishing Recall ensures all data that should be labelled as phishing is labelled as phishing. However, this may lead to many safe data values being labelled as phishing.</td><td>3</td></tr><tr><td>6</td><td>Maximising Safe Precision</td><td>Maximising safe Precision ensures data that is labelled as safe is in fact safe. This may lead to many safe data values not being classified as safe but all values that are labelled as safe are correctly labelled. This could cause many safe emails to be blocked by existing security systems utilising this model.</td><td>6</td></tr><tr><td>7</td><td>Maximising Safe Recall</td><td>Maximising safe Recall ensures all data that should be labelled as safe is labelled as safe. However, this may lead to many phishing data values not being caught by the model.</td><td>5</td></tr><tr><td>8</td><td>Maximising F1 Score</td><td>F1 score is an indicator of how healthy a model is. This does not take into account if recall is being sacrificed for precision and so if one of the 2 values were low, F1 would reflect that even if the other is 100%.</td><td>7</td></tr><tr><td>9</td><td>Maximising Phishing Accuracy</td><td>Maximising phishing accuracy would indicate all phishing data is being caught and processed correctly. However, this may ignore overfitting where all data is considered phishing.</td><td>8</td></tr><tr><td>10</td><td>Maximising Safe Accuracy</td><td>Maximising safe accuracy would indicate all safe data is being analysed and processed correctly. However, this may ignore overfitting where all data is considered safe.</td><td>9</td></tr><tr><td>11</td><td>Maximising Cumulative Model Accuracy</td><td>Cumulative model accuracy is the mean value of the individual label accuracies and shows a best representation of if one accuracy is overfitting. For instance, if one label had a 100% accuracy and the other was 0% the cumulative model accuracy would be 50% as the model only gets half the data right.</td><td>10</td></tr></tbody>
+                            </table>
                         </div>
-                        <p>After he creation and analysis of the different models the skl2onnx library is used to convert trainedmodels into the .onnx format capable of implimentation and use within the Node.js OnnxRuntime enviroment capable of analysing new data matching the expected input vectors without the need for re-training creating a mostly lightweight machine learning program that is capable of handing processing on a seperate server instead of the end users system.</p>
+                        <p>
+                            After the creation and analysis of the different models, the skl2onnx library is used to convert trained models into the .onnx format capable of implementation and use within the Node.js OnnxRuntime environment which analyses new data matching the expected input vectors without the need for re-training, creating a lightweight Machine Learning program capable of handing processing on a separate server instead of the end users’ system.
+                        </p>
                         <div class="image onnx-logo">
                             <img src="/public/onnx-runtime.png" alt="logo for onnx runtime" />
                             <img src="/public/scikit_learn_logo.png" alt="logo for sci kit learn" />
@@ -387,30 +409,40 @@
 
                         <div class="image-text mt-3">
                             <div class="paragraph">
-                                <h2>The API</h2>
-                                <p>The API was developed in Node.js and Express.js following RESTful API development standards outlined on <a href="https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/" label="link to stack overflow page of restful api development standards" aria-label="link to stack overflow page of restful api development standards">Stack Overflow</a>. To ensure these standards were followed a strong foundation was required which is why to begin development I first created a generic restful API that could hangle GET, POST, PATCH and DELETE requests and retrieve and update data from a simple JSON database, this was both to ensure standards were established early in development and also due to the fact when this project was started the end user interactions with the project had not been completely established as there was no end client to provide goals or expected usage for the end product.</p>
-                                <p>For the establishing of the API's pathways and final uses, an internal API Use Flow was created demonstraighting how data should be handled and passed to relevant functions. This was an important step as all 3 paths to this project were completed simultaniously and this would better allow a skeleton to be fully created before the machine learning models were finished continuing development during lerger processing or training periods.</p>
+                                <h2>
+                                    The API
+                                </h2>
+                                <p>
+                                    The API was developed in Node.js and Express.js following RESTful API development standards outlined on <a href="https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/" label="link to stack overflow page of restful api development standards" aria-label="link to stack overflow page of restful api development standards">Stack Overflow</a>. To ensure these standards were followed a strong foundation was required, I first created a generic restful API that could handle GET, POST, PATCH and DELETE requests and retrieve and update data from a simple JSON database. This was to ensure standards were established early in development and when this project was started, the end-user interactions with the project had not been completely established as there was no end client to provide goals or expected usage for the end product.
+                                </p>
+                                <p>
+                                    To establish the API's pathways and final uses, an internal API Use Flow was created demonstrating how data should be handled and passed to relevant functions. This was an important step as all 3 paths to this project were completed simultaneously and would better allow a skeleton to be created before the Machine Learning models were finished continuing development during larger processing or training periods.
+                                </p>
                             </div>
                             <div class="image dw-50">
-                                <img src="/public/API_Internal_flow.png" />
+                                <img src="/public/API_Internal_flow.png" title="API Internal Flow Diagram"/>
                             </div>
                         </div>
-                        
-                        
-                        <h2>The accompanying Web App</h2>
+
+
+                        <h2>The Accompanying Web App</h2>
                         <div class="image-text mt-3">
                             <div class="paragraph">
-                                <p>For the purposes of the project outlined the web application was not intended as a finalised product but instead as a slimmed down demonstration of how the API could be used and to demonstraight the effectiveness of the trained models, to this purpose the web application is specifically designed to be as simple to use as possible and clearly display API responses for analysis.</p>
-                                <p>After the completion of the basic web app and it's innitial connection to the API a final Use Flow was created to plan how the API should handle requests before any processing is performed, this was completed to not only add some further structure to the API and its request handing but also to put in place some quality of life functionality to the API, these included a caching policy and a rate limiting function.</p>
+                                <p>
+                                    For the purposes of the outlined project, the web application was not intended as a finalised product but instead as a slimmed-down demonstration of how the API could be used and as a demonstration of the effectiveness of the trained models, so the web application is designed to be as simple to use as possible and display API responses for analysis.
+                                </p>
+                                <p>
+                                    After the completion of the basic web app and its initial connection to the API, a final Use Flow was created to plan how the API should handle requests before any processing is performed, this was completed to add some further structure to the API and its request handling and to insert quality of life functionality to the API, including a caching policy and a rate-limiting function.
+                                </p>
                             </div>
-                            <div class="image dw-50" >
-                                <img src="/public/WebApp_design.png" />
+                            <div class="image dw-50">
+                                <img src="/public/WebApp_design.png" title="Wireframe Web App Design"/>
                             </div>
                         </div>
 
                         <div class="image mt-3 gap-3">
-                            <img src="/public/API_Use_flow.png" class="dw-50" />
-                            <img src="/public/PhishTackle-API_Demo_WebApp.png" class="dw-50" />
+                            <img src="/public/API_Use_flow.png" class="dw-50" title="API Use Flow Diagram"/>
+                            <img src="/public/PhishTackle-API_Demo_WebApp.png" class="dw-50" title="API Web App final screenshot"/>
                         </div>
 
                     </div>
@@ -420,33 +452,212 @@
 
         <div class="hidden-page" id="umbraco">
             <div class="hidden-page-nav">
-                <div class="hidden-page-nav-title"><p>Umbraco CMS</p></div>
-                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+                <div class="hidden-page-nav-title"><p>Umbraco CMS <span class="nav-close-token" aria-label="close project page" onclick="closeHiddenPages()">✕</span></p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>✕</p></a>
             </div>
             <div class="hidden-page-content">
                 <section id="umbraco_development">
-                    <div class="image hidden-fw">
-                        <img class="position-relative" style="top:-2rem;" src="/public/umbraco_fw.png" />
+                    <div class="image hidden-fw" style="top: -2rem;">
+                        <img class="position-relative" src="/public/umbraco_fw.png" />
                     </div>
-                    <p>content goes here</p>
+                    <div class="paragraph">
+                        <h1>
+                            What is Umbraco
+                        </h1>
+                        <p>
+                            Umbraco is a content management system (CMS) utilised for the creation of block based websites capable of being used by content creators with minimal tech experience to create connected looking websites. I first encountered Umbraco working <b><a href="thehumanech.agency" target="_blank" label="link to the human tech agency website" aria-label="link to the human tech agency website">thehumantech agency</a></b> starting on Umbraco 7, fixing existing website bugs and building blocks in an MVC development environment.
+                        </p>
+                        <p>
+                            At <b>thehumantech agency</b>, I worked on all versions of Umbraco up to Umbraco 12, building blocks in ASP.NET and .NETcore, and backend services integrating Umbraco functionality.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <h1>Tools Created</h1>
+
+                        <div class="paragraph">
+                            <h2>
+                                Umbraco Media Parser
+                            </h2>
+                            <p>
+                                The Umbraco Media Parser is a simple Bash shell Program created for Linux machines capable of searching through files for images and compressing them to 80% of their original size.
+                            </p>
+                            <p>
+                                The program works by having a specified folder containing the Umbraco media directory, a directory of folders with randomised names which each contain a single media file.
+                            </p>
+                            <h3>How it works:</h3>
+                            <div class="image-text">
+                                <div class="left">
+                                    <div class="image">
+                                        <img src="~/public/UmbracoMediaParser.jpg" alt="flow chart depicting the stages of the umbraco media parser" aria-label="flow chart depicting the stages of the umbraco media parser" title="flow chart depicting the stages of the umbraco media parser" />
+                                    </div>
+                                </div>
+                                <div class="paragraph" style="align-content: center;">
+                                    <ol>
+                                        <li>
+                                            First, the program checks the created "Read_contents" file for a nested folder
+                                        </li>
+                                        <li>
+                                            If a folder is found, the program checks the first item in the folder
+                                        </li>
+                                        <li>
+                                            For each item in the folder, the program checks to see if the item is a file or folder assigning a value of "shallow" or "deep" depending on the result of the check
+                                        </li>
+                                        <li>
+                                            If a folder is found the program loops through the items of the nested folder for files
+                                        </li>
+                                        <li>
+                                            When a file is found within the folder, the program runs the "checkImg" function with a path to the file and the "deep" or "shallow" tag
+                                        </li>
+                                        <li>
+                                            Within the "checkImg" function the provided file's file extension is checked for:
+                                            <ul>
+                                                <li>
+                                                    .jpg
+                                                </li>
+                                                <li>
+                                                    .jpeg
+                                                </li>
+                                                <li>
+                                                    .png
+                                                </li>
+                                                <li>
+                                                    .webp
+                                                </li>
+                                                <li>
+                                                    .tif
+                                                </li>
+                                                <li>
+                                                    .tiff
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            After finding an eligible file, a variable is created with the file’s path and a console message is created informing the user that the file is being optimised
+                                        </li>
+                                        <li>
+                                            Finally, the program runs the "convert file -quality 80% fileoutput" command squishing the file size to around 80% of the original size and outputting a "file completed message"
+                                        </li>
+                                    </ol>
+
+                                    <p>
+                                        This is then looped for each file within the folders replacing the old images with the new ones, not changing file extensions or folder names so the media can be easily replaced with no further development required.
+                                    </p>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+
+                        <div class="paragraph">
+                            <h2>
+                                Automated Index Rebuilder
+                            </h2>
+
+                            <div class="image-text">
+                                <div class="paragraph">
+                                    <p>
+                                        The Automated Index Rebuilder is a backend service created to detect common anomalies with Umbraco indexes such as Null values found and empty columns which could cause issues when accessing and manipulating the data within the index. This program is set to run periodically every 30 minutes on the first run of the deployed Umbraco website using Umbraco's built-in IIndexDiagnostics functionality.
+                                    </p>
+                                    <p>
+                                        The Index Health Checker works by first adding the IndexHealthCheckerTask function to the Hosted Services as a recurring task instantiating the <b>IRuntimeState, IExamineManager, IProfilingLogger, ICoreScopeProvider, IIndexDiagnosticsFactory, IIndexRebuilder and ILogger</b> dependencies.
+                                    </p>
+                                    <p>
+                                        Next, the service ensures the site is up and creates a scope to ensure changes are completed within 1 transaction.
+                                    </p>
+                                    <p>
+                                        The Health Checker then receives a list of examine manager indexes being used on the site and checks if the index is not null and has a usable name. After ensuring the index is valid, an information log is created, stating which index is being health-checked before sending the desired index name to the IndexMaintainance function.
+                                    </p>
+                                    <p>
+                                        After sending the Index Key to the IndexMaintainance function, the index is retrieved with the examineManager as an IIndex object which is then converted to an IIndexDiagnosis object for its access to diagnostic tools.
+                                    </p>
+                                    <p>
+                                        Following the creation of the IIndexDiagnostics object, the Index document count and its health status are checked. Then these values are used together to create a boolean value for the index's health status comparing the result of the isHealthy method and the document count is greater than 0.
+                                    </p>
+                                    <p>
+                                        If the indexes are found to be unhealthy a traceDuration log is made stating the index's are being repaired and the unhealthy index key is passed to the "RebuildIndex" function otherwise, if the index is healthy, an information log is created stating the “Index was not rebuilt” and attached is the document count and health status of the index.
+                                    </p>
+                                    <p>
+                                        Within the RebuildIndex function, a boolean is created ensuring the index can be rebuilt, if this is not possible a Warning log is created, stating the index was unable to be rebuilt along with the health status when checked and the document count of the index.
+                                    </p>
+                                    <p>
+                                        If the index can be rebuilt, it is passed into the <b>IIndexRebuilder.RebuildIndex()</b> function and again checked for document count and health status.
+                                    </p>
+                                    <p>
+                                        If the index is healthy an information log is made stating the index was successfully rebuilt and is healthy with the updated document count and health status included, otherwise a warning log is made stating an index was attempted to be rebuilt but failed with the attached statistics of the index.
+                                    </p>
+                                    <p>
+                                        The above process is repeated for all indexes that aren’t excluded from the function and finally, the scope is completed and a Task.TaskCompleted response is made triggering the timer for the next loop.
+                                    </p>
+                                </div>
+                                <div class="image">
+                                    <img src="~/public/AutomatedIndexRebuilder.jpg" title="Flow chart of how the automated index rebuilder works" aria-label="Flow chart of how the automated index rebuilder works" alt="Flow chart of how the automated index rebuilder works" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="paragraph">
+                            <h2>
+                                Canonical URL Composer
+                            </h2>
+                            <p>
+                                The Canonical URL Composer was created to solve a missing feature in Umbraco 11 where you could no longer create canonical or replacement URLs for web pages with long paths.
+                            </p>
+                            <p>
+                                Created as a backend composer in C#, it intercepts page requests to the server. This is done by assigning a new step to the project's builder, UrlSegmentProviders, and adding a new step to when pages are published, checking a new field on Umbraco Pages called "cannonicalUrl".
+                            </p>
+                            <p>
+                                The first part of the function takes in request page paths and analyses the final segment of the path against the requested page’s content checking for a filled-in "cannonicalUrl" field which if found, updates the last segment of the requested URL to the desired path allowing a seamless and more readable resultant page path.
+                            </p>
+                            <p>
+                                The second and more complicated part of this composer runs whenever a page is published updating Umbraco's list of recognised URL paths for a given piece of content:
+                            </p>
+                            <div class="image-text">
+                                <div class="paragraph">
+                                    <ol>
+                                        <li>
+                                            First, the function retrieves the ID and URL of the given content using the ID of the page to retrieve the IPublishedContent with the Umbraco "TryGetUmbracoContext()" to create an umbracoContext accessor and "content.GetById()" function to receive the page’s content function
+                                        </li>
+                                        <li>
+                                            Then, after ensuring the content is not null, the field data is attempted to be retrieved from the "cannonicalUrl" field added to every page through compositions which are evaluated for any content
+                                        </li>
+                                        <li>
+                                            If no content is found within the "cannonicalUrl" field, the base URLs are returned. In the event content is found, regex is used on the name of the Umbraco page to mimic the existing transformation Umbraco performs on page names
+                                        </li>
+                                        <li>
+                                            The regex edited name segment and the cannonicalUrl field value are then stored in a variable with the value being the umbracoContent.Url() path with the name transform replaced with the cannonicalUrl field data to be used later
+                                        </li>
+                                        <li>
+                                            Finally, the cannonicalUrl field data is checked for a starting "/", which if not provided is added to the variable. The original URL for the page and the created URL (as long as the created URL contains valid content) are added to an array of UrlInfo objects and is returned updating Umbraco's list of valid URLs for the published content.
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="image">
+                                    <img src="~/public/CanonicalURLComposer.jpg" alt="Flowchart of how canonical URL composer works" aria-label="Flowchart of how canonical URL composer works" title="Flowchart of how canonical URL composer works" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
 
         <div class="hidden-page" id="techne_diversity">
             <div class="hidden-page-nav">
-                <div class="hidden-page-nav-title"><p>Techne Diversity</p></div>
-                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+                <div class="hidden-page-nav-title"><p>Techne Diversity <span class="nav-close-token" aria-label="close project page" onclick="closeHiddenPages()" ">✕</span></p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>✕</p></a>
             </div>
             <div class="hidden-page-content">
                 <section id="techne_diversity_development">
 
-                    <div class="image hidden-fw">
+                    <div class="image hidden-fw" style="top: -2rem;">
                         <div class="techne-replacement-text">
                             <img src="/public/techne.svg" />
-                            <h1>The craft of research in the arts and humanities</h1>
+                            <h1>
+                                The craft of research in the arts and humanities
+                            </h1>
                         </div>
-                        <img class="position-relative rainbow-animate" style="top:-2rem;" src="/public/techne-noText.png" />
+                        <img class="position-relative rainbow-animate" src="/public/techne-noText.png" />
                     </div>
 
                     <div class="image-text">
@@ -455,15 +666,27 @@
                         </div>
 
                         <div class="paragraph">
-                            <h1>What is the Diversity Hub?</h1>
-                            <p>The <a href="https://www.technediversity.co.uk/" target="_blank">Techne Diversity Hub</a> is a website created by technē to aid in providing funding and support to PhD students working in Arts and Humanities disciplins. The Diversity Hub itself specifically focuses on supporting students of colour aiming to aid with and improve on the inclusion issues found in many postgraduate research schemes.</p>
-                            <p>This project was particularly important to me, both due to the message of the client I believe being an important one and also due to the fact that this was one of the very first projects I was given to work on after the completion of my learning of the basics of ASP.NET, MVC and CMS development principles. Working on this project I was truly joining the team of developers at thehumantech agency I had been learning beside and becoming friends with over the past few months, no longer working on pre-existing websites and bug fixes with the occasional new block I was working on a work in progress site building core functionality.</p>
+                            <h1>
+                                What is the Diversity Hub?
+                            </h1>
+                            <p>
+                                The <a href="https://www.technediversity.co.uk/" target="_blank">Techne Diversity Hub</a> is a website created by <b>technē</b> to aid in funding and support to PhD students working in Arts and Humanities disciplines. The Diversity Hub focuses on supporting students of colour aiming to improve inclusion issues found in postgraduate research schemes.
+                            </p>
+                            <p>
+                                ThisThis project was important to me due to the client’s message and as one of the first projects I worked on after my education on the basics of ASP.NET, MVC and CMS development principles. Working on this project, I joined the team of developers at <b>thehumantech agency</b>with whom I learned besides and befriended, no longer working on pre-existing websites and bug fixes with the occasional new block, I was working on a work-in-progress site building core functionality.
+                            </p>
                         </div>
                     </div>
                     <div class="paragraph">
-                        <h1>What did I do?</h1>
-                        <p>When I first joined the Technē internal team, I was tasked with a bunch of smaller stuff that needed fixing or wasnt quite how the client would like it such as images not appearing if they were too large for the JavaScript to detect them as being in frame and all of the applications being labelled as having been created by the lead developer (even if they werent!). I quickly got to work fixng these bugs working closely with their acocunt manager ensuring they had an up to date visual on their websites progress.</p>
-                        <p>After the completion of these innitial issues I was then given the oppertunity to start bulding some of the core functionality for the website, building an email function in the C# backend for informing mentors when a new mentee application was creates with the contact details provided from the application and for informing mentees when their applciation is responded to. After the creation of the email functioality I began working on an Umbraco redirection component built using Umbraco compositions and non-specific code allowing it's use across multiple different Umbraco 11 websites with minimal code changes to the .cshtml files,the module worked by allowing the optional use of an end date for the redirect and optional redirection page which if not provided would default to directing to a generic "This page is not avaliable, this page will be avaliable on DD/MM/YYYY" page which with minimal styling could comfortably fit in with any existing sites.</p>
+                        <h1>
+                            What did I do?
+                        </h1>
+                        <p>
+                            Joining the Technē internal team, I was tasked with smaller fixes and client requests such as, images not appearing if they were too large for the JavaScript to detect them as being in frame and all of the applications being labelled as being created by the lead developer (even if they were not!). Through communication with their account manager, I fixed these bugs and ensured I presented an up-to-date visual on their website's progress.
+                        </p>
+                        <p>
+                            After completing these tasks, I was allowed to start building core functionalities for the website, an opportunity I could not pass up. I built an email function in the C# backend to inform mentors when a new mentee application was created, with the contact details provided from the application and to inform mentees when their application is responded to. Afterwards, I worked on an Umbraco redirection component, built using Umbraco compositions and non-specific code which allowed i's use across different Umbraco 11 websites using minimal code changes to the .cshtml files. The module worked by allowing the optional use of an end date for the redirect and optional redirection page, which if not provided would default to directing to a generic "This page is not available, this page will be available on DD/MM/YYYY" page which with minimal styling could comfortably fit in with any existing sites.
+                        </p>
                     </div>
                     <div class="image">
                         <img src="~/public/redirect-page-techne.png" />
@@ -474,31 +697,47 @@
 
         <div class="hidden-page" id="wessex_internet">
             <div class="hidden-page-nav">
-                <div class="hidden-page-nav-title"><p>Wessex Internet</p></div>
-                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+                <div class="hidden-page-nav-title"><p>Wessex Internet <span class="nav-close-token" aria-label="close project page" onclick="closeHiddenPages()">✕</span></p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>✕</p></a>
             </div>
             <div class="hidden-page-content">
                 <section id="wessex_internet_development">
-                    <div class="image hidden-fw">
-                        <img class="position-relative" style="top:-2rem; width: 100%;" src="/public/wessexInternet-splash.jpeg" />
+                    <div class="image hidden-fw" style="top: -2rem;">
+                        <img class="position-relative" style="width: 100%;" src="/public/wessexInternet-splash.jpeg" />
                     </div>
 
                     <div class="paragraph">
-                        <h1>Who are Wessex Internet?</h1>
-                        <p><a href="https://www.wessexinternet.com/" target="_blank">Wessex Interet</a> is a company dedicated to giving full fiber internet to places previously neglected such as the country side at a fast speed and an affordable price. Wessex Interntet works with the government to ensure no matter how rural internet is accessible wherever you are, working to chip away byte by byte to the digital divide.</p>
-                        <p>During my time at thehumantech agency Wessex Internet was one of my consistent clients always looking to update their site to be just right, and always open to new ideas and recommendations of ways to improve the look and feel of their website. They also have an inhouse development team that worked to create and maintain an API used within their order journey that was provided to the team at thehumantech agency with some documentation for a joint development project I was given the privilege to work on with 2 other front-end developers.</p>
-                    </div>
-                    
-                    <div class="paragraph">
-                        <h1>Work completed with Wessex Internet?</h1>
-                        <p>During my time working with Wessex Internet many smaller projects were completed with 2 bigger ones sprinkled in. First, was the development and maintainance of blocks and site styling across their website with the creations of setting s toggles for their created blocks that allowed simplified adjustments to be made to existing blocks such as switching the image from left to right without the creation of a completely new block, creating a more streamlined end user eperience, which is always the goal with CMS development.</p>
+                        <h1>
+                            Who is Wessex Internet?
+                        </h1>
+                        <p>
+                            <a href="https://www.wessexinternet.com/" target="_blank">Wessex Interet</a> is a company dedicated to giving full-fibre internet to neglected areas such as the countryside, at a fast speed and an affordable price. <b>Wessex Interntet</b> works with the government to ensure no matter how rural, the internet is accessible wherever you are, working to chip away byte by byte to the digital divide.
+                        </p>
+                        <p>
+                            During my time at <b>thehumantech agency</b>, <b>Wessex Internet</b> was one of my consistent clients, always looking to update their site and open to new ideas and recommendations to improve their website. They have an in-house development team that worked to create and maintain an API used within their order journey that was provided to the team at thehumantech agency with documentation for a joint development project, I was given the privilege to work with 2 front-end developers.
+                        </p>
                     </div>
 
                     <div class="paragraph">
-                        <h2>The development of a new Site Navigation</h2>
-                        <p>One of the bigger tasks completed with Wessex Internet was the creation of a completely new site navigation for their website which was the first of my solo projects I completed while working at thehumantech agency. The original navigation was a relic of when the sites rediesign was first completed and was not made with all the different links they would eventually want on their navigation and the dropdowns that were eventually required, this meant that the existing navigation was not properly responsive to smaller screen sizes with no hamburger menu alternative for mobile screensizes, the existing navigation no longer satisfied the clients needs and finally the existing navigation was all completely hard coded not ustilising the generic settings page created within the Umbraco CMS specifically for creating data accessible form all pages.</p>
-                        <p>This was solved with the inclusion of new fields into the site settings page for each navigation main link and optional sub navigation links, the redesign of the existing navigation to a more minimalist and modern design and the creation of styling breakpoints capable of adjusting the sites navigation to work with all screensizes.</p>
-                    
+                        <h1>
+                            Work Completed with Wessex Internet
+                        </h1>
+                        <p>
+                            Working with <b>Wessex Internet</b>, I completed many small projects alongside 2 intensive ones. First, was the development and maintenance of blocks and site styling across their website, with the creation of settings toggles for their created blocks, that allowed simplified adjustments to be made to existing blocks such as switching the image from left to right without the creation of a completely new block, creating a more streamlined end-user experience, the goal of any CMS development.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <h2>
+                            The Development of a New Site Navigation
+                        </h2>
+                        <p>
+                            One of the bigger tasks completed with <b>Wessex Internet</b> waswas the creation of a new site navigation for their website, one of the first solo projects I completed while working at <b>thehumantech agency</b>. The original navigation was a relic of the site’s original redesign and was not optimised for the different links they would eventually want on their navigation, this meant that the existing one was not responsive to smaller screen sizes as there was no hamburger menu alternative for mobile screen sizes. It no longer satisfied the client’s needs and was completely hard-coded, not utilising the generic settings page created within the Umbraco CMS specifically for creating data accessible from all pages.
+                        </p>
+                        <p>
+                            This was solved with the inclusion of new fields into the site settings page for each navigation main link and optional sub-navigation links, the redesign of the existing navigation to a more minimalist and modern design and the creation of styling breakpoints capable of adjusting the site's navigation to work with all screen sizes.
+                        </p>
+
                         <div class="image">
                             <img class="position-relative mb-4 w-100" src="/public/w-nav-d.png" alt="Image showing desktop view of site navigation with a dropdown highlighted and not highlighted" aria-label="Image showing desktop view of site navigation with a dropdown highlighted and not highlighted" />
                         </div>
@@ -508,11 +747,19 @@
                     </div>
 
                     <div class="paragraph">
-                        <h2>The development of a new new order journey</h2>
-                        <p>The coup de grâce of my work with Wessex Internet culminated with the development of a new order journey to replace the old Umbraco package based order journey which was producing lower than expected conversion rates and was difficult to keep up to date with their internal packages, vulnerable to tampering and reliant on legacy code following outdated web development principles.</p>
-                        <p>For the development of the new order journey I was a part of a team of 2 other developers tasked with the creation of a angular based order journey aiming to use the flexibility of the framework to build alongside Wessex Internets in-house development team utilising their in development API to create an easy to use, reactive order journey. Throughout the development weekly meetings were had with Wessex Internet and thir developers to ensure the projects progress was going smoothly and any issues that were encountered on either side were recorded in an open document accessible by both teams.</p>
-                        <p>Thorughout dveelopment, a combination Scrum and Feature Based development lifecycle was followed with the account manager and project team working in tandem to produce realistic sprints and carve out an achievable timeline with actionable and functional objectives capable of demonstraighting to the client allowing a constant flow of communication between the teams facilitating the creation of a product the clients were immediately satisfied with.</p>
-                        
+                        <h2>
+                            The Development of a New Order Journey
+                        </h2>
+                        <p>
+                            The coup de grâce of my work with <b>Wessex Internet</b> culminated with the development of a new order journey to replace the old Umbraco package-based order journey which was producing lower-than-expected conversion rates and was difficult to keep up to date with their internal packages, vulnerable to tampering and reliant on legacy code following outdated web development principles.
+                        </p>
+                        <p>
+                            For the development of the new order journey, I was part of a team of 2 other developers tasked with the creation of an Angular based order journey, aiming to use the flexibility of the framework to build alongside <b>Wessex Internet's</b> in-house development team utilising their in-development API to create an easy to use, reactive order journey. Throughout development, weekly meetings were held with <b>Wessex Internet</b> and its developers to ensure the project's progress was going smoothly and issues encountered on either side were recorded in an open document accessible by both teams.
+                        </p>
+                        <p>
+                            Throughout development, a combination Scrum and Feature Based development lifecycle was followed with the account manager and project team working in tandem to produce realistic sprints and carve out an achievable timeline with actionable and functional objectives capable of demonstrating to the client allowing streamlined communication between the teams, which facilitated the creation of a product the clients were immediately satisfied with.
+                        </p>
+
                         <div class="image">
                             <img class="position-relative" src="/public/Wessex-order-journey-home.png" alt="Image showing the Wessex Internet order journey box on the home page" aria-label="Image showing the Wessex Internet order journey box on the home page" />
                         </div>
@@ -524,58 +771,83 @@
 
         <div class="hidden-page" id="onewelbeck">
             <div class="hidden-page-nav">
-                <div class="hidden-page-nav-title"><p>OneWelbeck Healthcare</p></div>
-                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
+                <div class="hidden-page-nav-title"><p>OneWelbeck Healthcare <span class="nav-close-token" aria-label="close project page" onclick="closeHiddenPages()">✕</span></p></div>
+                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>✕</p></a>
             </div>
             <div class="hidden-page-content">
-                <section id="PhishTackleAPI_development">
-                    <div class="paragraph">
-                        <h1>H1-TAG content goes here</h1>
-                        <h2>H2-TAG content goes here</h2>
-                        <h3>H3-TAG content goes here</h3>
-                        <h4>H4-TAG content goes here</h4>
-                        <p>P-TAG content goes here</p>
-                        <a href="https://google.com" target="_blank">a-TAG content goes here</a>
+                <section id="onewelbeck_development">
+                    <div class="image hidden-fw" style="top: -2rem; min-height: 30rem;">
+                        <img class="position-relative" style="width: 100%; margin: 2rem;" src="/public/onewelbeck_banner.png" />
                     </div>
 
                     <div class="paragraph">
-                        <h1>H1-TAG content goes here</h1>
-                        <h2>H2-TAG content goes here</h2>
-                        <h3>H3-TAG content goes here</h3>
-                        <h4>H4-TAG content goes here</h4>
-                        <p>P-TAG content goes here</p>
-                        <a href="https://google.com" target="_blank">a-TAG content goes here</a>
+                        <h1>
+                            Who is OneWelbeck?
+                        </h1>
+                        <p>
+                            <a href="https://www.onewelbeck.com/" target="_blank">OneWelbeck</a> is a private healthcare company based in London, England, who with its wide variety of specialist centres and consultants, provide healthcare advice, consultations and treatments. Working with <b>OneWelbeck</b> at <b>thehumantech agency</b>, I was part of the initial team developing their new website for their redesign and a many features and stylistic changes.
+                        </p>
+                    </div>
+
+                    <div class="paragraph">
+                        <h2>
+                            Creation of Heros and other Misc Blocks
+                        </h2>
+                        <p>
+                            Working with <b>OneWelbeck</b> and the team for the site's creation, I aided in the development and integration of blocks across the site into Umbraco’s CMS and backend of the site including heroes, award blocks, banners and accordions.
+                        </p>
                     </div>
 
                     <div class="image">
-                        <img src="/public/pfp_landscape.png" />
+                        <p>!!! Insert images of blocks I Worked on across the site !!!</p>
                     </div>
 
-                    <div class="image-text">
-                        <div class="paragraph">
-                            <h1>H1-TAG content goes here</h1>
-                            <h2>H2-TAG content goes here</h2>
-                            <h3>H3-TAG content goes here</h3>
-                            <h4>H4-TAG content goes here</h4>
-                            <p>P-TAG content goes here</p>
-                            <a href="https://google.com" target="_blank">a-TAG content goes here</a>
-                        </div>
-                        <div class="image">
-                            <img src="/public/about_me_pfp.png" />
-                        </div>
+                    <div class="paragraph">
+                        <h2>
+                            Page Themes
+                        </h2>
+                        <p>
+                            <b>OneWelbeck</b> wanted themes for each of their specialities that would be visible throughout their website on all related content including, speciality centres, conditions, treatments, consultants and a blog.
+                        </p>
+                        <p>
+                            To this purpose a new dropdown field was added to all applicable content in Umbraco called “speciality centre”, this speciality centre field was integrated into the backend of the website’s controllers for each model type and the .cshtml of each component. This allowed the extraction of the Umbraco field dropdown data adding the desired colours to the content, such as wine red accents to heart health pages.
+                        </p>
                     </div>
-                </section>
-            </div>
-        </div>
 
-        <div class="hidden-page" id="abbeyfield">
-            <div class="hidden-page-nav">
-                <div class="hidden-page-nav-title"><p>Abbeyfield Retirement Living</p></div>
-                <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>X</p></a>
-            </div>
-            <div class="hidden-page-content">
-                <section id="PhishTackleAPI_development">
-                    <p>content goes here</p>
+                    <div class="image">
+                        <p>!!! Insert images of page themeson different page types !!!</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <h2>
+                            Website Searches
+                        </h2>
+                        <p>
+                            Finally, after the website’s redesign, changes were requested for the website’s multiple searches in how results were returned from the examine manager, utilising linq statements for reducing result array length and specialising results for filters and lossy and lossless results.
+                        </p>
+                        <p>
+                            For the changes requested on the consultant search, new linq statements were constructed for re-organising result arrays to the desired orders including:
+                        </p>
+                        <ul>
+                            <li>
+                                randomising consultants to ensure all consultants had equal opportunities to be seen
+                            </li>
+                            <li>
+                                the use of new functions for text searches analysing if the provided search data was more than one word as if only one word was provided to the search
+                            </li>
+                            <li>
+                                lossy results should be returned using regex for retrieving results that contain partial matches to the word
+                            </li>
+                            <li>
+                                lossless results are returned for multiple-word searches where only exact matches are returned, this was done to aid in searching for specific specialities or consultants.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="image">
+                        <p>!!! Insert images of searches both lossy and lossless !!!</p>
+                    </div>
+
                 </section>
             </div>
         </div>
