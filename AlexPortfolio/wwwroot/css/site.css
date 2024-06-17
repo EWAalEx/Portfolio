@@ -1969,13 +1969,17 @@ section#experience {
 
 @media only screen and (max-width: 768px) {
 
-    .overlay-borders .bottom-left {
-        margin-bottom: 65px;
+    .overlay-borders {
+        height: calc(100% - 37px);
     }
 
-    .overlay-borders .bottom-right {
-        margin-bottom: 65px;
-    }
+        .overlay-borders .bottom-left {
+            margin-bottom: 65px;
+        }
+
+        .overlay-borders .bottom-right {
+            margin-bottom: 65px;
+        }
 
     .overlay-timer p {
         margin-bottom: 65px;
