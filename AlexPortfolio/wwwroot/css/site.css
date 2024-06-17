@@ -2001,6 +2001,10 @@ section#experience {
         height: calc(calc(100vh - 6rem) - 37px)
     }
 
+    .hidden-pages {
+        height: calc(calc(100vh - 7rem) - 37px);
+    }
+
     .dw-50 {
         width: 100% !important;
     }
