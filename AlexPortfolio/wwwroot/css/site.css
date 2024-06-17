@@ -154,6 +154,10 @@ body {
     display: none;
 }
 
+textarea {
+    resize: none;
+}
+
 #theme-toggle {
     width: 2.5rem;
     height: 2.5rem;
@@ -1983,6 +1987,10 @@ section#experience {
 
     .overlay-stats .overlay-battery {
         margin-bottom: 65px;
+    }
+
+    .overlay .page-position {
+        top: 45%
     }
 
     .page-content {
