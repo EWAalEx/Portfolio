@@ -1,0 +1,11 @@
+<svg id="CD_case" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 600" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" fill="none" stroke="#000">
+	<rect width="600" height="500" rx="0" ry="0" transform="translate(0 50)" stroke-width="2"/>
+	<line x1="-30" y1="0" x2="-30" y2="500" transform="translate(105 50)" stroke-width="2"/>
+	<line x1="-30" y1="0" x2="-30" y2="150" transform="translate(610 350)" stroke-width="2"/>
+	<line x1="-30" y1="0" x2="-30" y2="150" transform="matrix(1 0 0-1 610 250)" stroke-width="2"/>
+	<ellipse rx="225" ry="225" transform="translate(337.5 300.000006)" stroke-width="2"/>
+	<path d="M115.606958,295.476962c0-113.726396,107.730708-227.452792,215.461415-227.452792" transform="translate(-12.5 0.000001)" stroke-width="2"/>
+	<path d="M115.606958,295.476962c0-113.726396,107.730708-227.452792,215.461415-227.452792" transform="matrix(-1 0 0 1 687.340254-.000005)" stroke-width="2"/>
+	<path d="M115.606958,295.476962c0-113.726396,107.730708-227.452792,215.461415-227.452792" transform="matrix(-1 0 0-1 687.340268 602.372811)" stroke-width="2"/>
+	<path d="M115.606958,295.476962c0-113.726396,107.730708-227.452792,215.461415-227.452792" transform="matrix(1 0 0-1-13.951782 602.372811)" stroke-width="2"/>
+</svg>

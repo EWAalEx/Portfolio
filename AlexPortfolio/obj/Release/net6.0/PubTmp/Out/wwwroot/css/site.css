@@ -1092,7 +1092,6 @@ section#about_me {
 
     section#about_me .page-text {
         width: calc((100%/3)*2);
-        height: 100%;
         display: flex;
         flex-direction: column;
     }
@@ -1102,14 +1101,6 @@ section#about_me {
             font-style: italic;
             line-height: 1.1em;
         }
-
-        section#about_me .page-text .paragraph.scrollable {
-            overflow-y: auto;
-        }
-
-            section#about_me .page-text .paragraph.scrollable::-webkit-scrollbar {
-                width: 1rem;
-            }
 
         section#about_me .page-text .paragraph .quote p {
             font-size: 1.2em;
@@ -1178,24 +1169,6 @@ section#about_me {
 .dark section#about_me .page-text .quote p {
     color: rgb(56, 216, 29);
 }
-
-.dark section#about_me .page-text .paragraph.scrollable::-webkit-scrollbar-thumb {
-    background: rgb(56, 216, 29);
-    border-radius: 10px;
-}
-
-    .dark section#about_me .page-text .paragraph.scrollable::-webkit-scrollbar-thumb:hover {
-        background: rgb(38 147 20);
-    }
-
-.light section#about_me .page-text .paragraph.scrollable::-webkit-scrollbar-thumb {
-    background: rgb(48, 0, 226);
-    border-radius: 10px;
-}
-
-    .light section#about_me .page-text .paragraph.scrollable::-webkit-scrollbar-thumb:hover {
-        background: rgb(33 0 155);
-    }
 
 section#experience {
     flex-direction: row;
@@ -1965,30 +1938,6 @@ section#experience {
 
 @media only screen and (max-width: 768px) {
 
-    .overlay-borders .bottom-left {
-        margin-bottom: 65px;
-    }
-
-    .overlay-borders .bottom-right {
-        margin-bottom: 65px;
-    }
-
-    .overlay-timer p {
-        margin-bottom: 65px;
-    }
-
-    .overlay-stats .overlay-recording {
-        margin-bottom: 65px;
-    }
-
-    .overlay-stats .overlay-battery {
-        margin-bottom: 65px;
-    }
-
-    .page-content {
-        height: calc(calc(100vh - 6rem) - 37px)
-    }
-
     .dw-50 {
         width: 100% !important;
     }
@@ -2064,7 +2013,6 @@ section#experience {
 
         section#about_me .page-text {
             width: 100%;
-            height: 100%;
         }
 
             section#about_me .page-text .heading {
