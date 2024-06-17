@@ -1539,6 +1539,16 @@ section#experience {
                     margin-top: 0;
                 }
 
+            .hidden-pages .hidden-page .hidden-page-content .row-images {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+            }
+
+                .hidden-pages .hidden-page .hidden-page-content .row-images .image {
+                    width: calc(50% - 0.5rem);
+                }
+
             .hidden-pages .hidden-page .hidden-page-content .image {
                 position: relative;
                 width: 100%;
@@ -1931,6 +1941,15 @@ section#experience {
     .dw-50 {
         width: 100% !important;
     }
+
+    .hidden-pages .hidden-page .hidden-page-content .row-images {
+        flex-direction: column;
+        gap: 0;
+    }
+
+        .hidden-pages .hidden-page .hidden-page-content .row-images .image {
+            width: 100%;
+        }
 
     .hidden-pages .hidden-page .hidden-page-content .image .dw-50 {
         width: 100%;
