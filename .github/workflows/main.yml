@@ -19,7 +19,7 @@ jobs:
          dotnet-version: '6.0.x'
 
      - name: Restore
-       run: fotnet restore ./AlexPortfolio.sln
+       run: dotnet restore ./AlexPortfolio.sln
 
      - name: Build
        run: dotnet build ./AlexPortfolio.sln --configuration Release --no-restore
