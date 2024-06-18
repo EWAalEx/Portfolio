@@ -366,7 +366,9 @@ function showProjectPage(pageId) {
 function closeHiddenPages() {
     var hidden_page_container = document.querySelector(".hidden-pages");
 
-    hidden_page_container.classList.toggle("closed");
+    if(!hidden_page_container.classList.contains("closed")) {
+        hidden_page_container.classList.toggle("closed");
+    }
 
     for (i = 0; i < hidden_page_container.childElementCount; i++) {
         var child = hidden_page_container.children[i];
@@ -379,27 +381,12 @@ function closeHiddenPages() {
 //hide all pages
 closeHiddenPages();
 
-var page = document.getElementById('page'),
-    ua = navigator.userAgent,
-    iphone = ~ua.indexOf('iPhone') || ~ua.indexOf('iPod');
-
-var setupScroll = window.onload = function () {
-    // Start out by adding the height of the location bar to the width, so that
-    // we can scroll past it
-    if (iphone) {
-        // iOS reliably returns the innerWindow size for documentElement.clientHeight
-        // but window.innerHeight is sometimes the wrong value after rotating
-        // the orientation
-        var height = document.documentElement.clientHeight;
-        // Only add extra padding to the height on iphone / ipod, since the ipad
-        // browser doesn't scroll off the location bar.
-        if (iphone && !fullscreen) height += 60;
-        page.style.height = height + 'px';
-    }
-    // Scroll after a timeout, since iOS will scroll to the top of the page
-    // after it fires the onload event
-    setTimeout(scrollTo, 0, 0, 1);
-};
+function fixIOS() {
+    const page = document.querySelector("#page-theme");
+    const internalPage = document.querySelector(".page-content");
+    page.style.height = window.innerHeight + "px";
+    internalPage.style.height = "calc(" + window.innerHeight + " - 6rem)";
+}
 
 /// overlay effects
 //for recording
@@ -441,9 +428,11 @@ page_content.addEventListener("scroll", pagePosition);
 
 //underline under name matches width
 setUnderline();
-window.onresize = () => (pageLen = pageSetup(pageLen), setUnderline());
+window.onresize = () => (pageLen = pageSetup(pageLen), setUnderline(), fixIOS());
 
 //mouse hover effect
 var mousePosition = [0, 0];
 
 document.onmousemove = () => (mousePosition = getMousePosition());
+
+window.onresize();

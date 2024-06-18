@@ -54,6 +54,7 @@
 
 
     <div class="page-content" onresize="pageSetup()">
+
         <div id="page-1" class="page">
             <div class="title-header">
                 <h1 id="title-name" class="display-3 m-0">Alexander Ellis-Wilson</h1>
@@ -83,22 +84,23 @@
                 <span>g</span>
             </div>
 
-            <div class="bio-text">
-                <p>Born 2002 in England, I believe computing should be accessible and safe for anyone. Graduated in 2024 from Bournemouth University with a BSc in Cyber Forensics and Security.</p>
+            <div class="scrollable">
+                <div class="bio-text">
+                    <p>Born 2002 in England, I believe computing should be accessible and safe for anyone. Graduated in 2024 from Bournemouth University with a BSc in Cyber Forensics and Security.</p>
+                </div>
+
+                <div class="section-links">
+                    <h2>Skip the fun?</h2>
+                    <h2>Here's some links:</h2>
+
+                    <ul>
+                        <li><a href="#about_me">About me</a></li>
+                        <li><a href="#experience">My Experience</a></li>
+                        <li><a href="#projects_1">Previous projects</a></li>
+                        <li><a href="#contact_me">Contact me</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="section-links">
-                <h2>Skip the fun?</h2>
-                <h2>Here's some links:</h2>
-
-                <ul>
-                    <li><a href="#about_me">About me</a></li>
-                    <li><a href="#experience">My Experience</a></li>
-                    <li><a href="#projects_1">Previous projects</a></li>
-                    <li><a href="#contact_me">Contact me</a></li>
-                </ul>
-            </div>
-
         </div>
 
         <div id="page-2" class="page">
@@ -149,54 +151,56 @@
                     <div class="heading">
                         <h1 class="display-1">Experience</h1>
                     </div>
+                    <div class="scrollable">
 
-                    <div class="paragraph">
-                        <div class="quote">
-                            <p>"A jack of all trades is a master of none, but oftentimes is better than a master of one." - William Shakespeare</p>
-                        </div>
-
-                        <div class="body-text">
-                        </div>
-                    </div>
-
-                    <div class="experiences">
-
-                        <div class="experience">
-                            <a class="company-url" href="https://www.thehumantech.agency/" target="_blank" aria-label="link to thehumantech agency's website, one of my previous employers"></a>
-                            <div class="left">
-                                <div class="duration">
-                                    Jun 2022 -- Jan 2024
-                                </div>
+                        <div class="paragraph">
+                            <div class="quote">
+                                <p>"A jack of all trades is a master of none, but oftentimes is better than a master of one." - William Shakespeare</p>
                             </div>
-                            <div class="right">
-                                <div class="job-title">
-                                    Placement Fullstack Developer • thehumantech Agency <span class="move-right">➼</span>
-                                </div>
-                                <div class="job-description">
-                                    Supporting clients daily through the support queue, building reactive CMS first web pages with a variety of frontend JS fameworks and developing blocks and tools in ASP.Net and .NET Core.
-                                </div>
-                                <ul class="skills">
-                                    <li class="skill">HTML</li>
-                                    <li class="skill">CSS</li>
-                                    <li class="skill">SCSS</li>
-                                    <li class="skill">JavaScript</li>
-                                    <li class="skill">TypeScript</li>
-                                    <li class="skill">Angular</li>
-                                    <li class="skill">Node.js</li>
-                                    <li class="skill">nUnit</li>
-                                    <li class="skill">.Net Core</li>
-                                    <li class="skill">ASP.Net</li>
-                                    <li class="skill">MVC</li>
-                                    <li class="skill">Umbraco</li>
-                                    <li class="skill">Sitecore</li>
-                                </ul>
+
+                            <div class="body-text">
                             </div>
                         </div>
 
-                        <div class="get-in-touch text-center">
-                            <a href="#contact_me" aria-label="Link to contact me page" label="Link to contact me page"></a>
-                            <h2>Think your company should be on here?</h2>
-                            <h2>Get in touch!</h2>
+                        <div class="experiences">
+
+                            <div class="experience">
+                                <a class="company-url" href="https://www.thehumantech.agency/" target="_blank" aria-label="link to thehumantech agency's website, one of my previous employers"></a>
+                                <div class="left">
+                                    <div class="duration">
+                                        Jun 2022 -- Jan 2024
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="job-title">
+                                        Placement Fullstack Developer • thehumantech Agency <span class="move-right">➼</span>
+                                    </div>
+                                    <div class="job-description">
+                                        Supporting clients daily through the support queue, building reactive CMS first web pages with a variety of frontend JS fameworks and developing blocks and tools in ASP.Net and .NET Core.
+                                    </div>
+                                    <ul class="skills">
+                                        <li class="skill">HTML</li>
+                                        <li class="skill">CSS</li>
+                                        <li class="skill">SCSS</li>
+                                        <li class="skill">JavaScript</li>
+                                        <li class="skill">TypeScript</li>
+                                        <li class="skill">Angular</li>
+                                        <li class="skill">Node.js</li>
+                                        <li class="skill">nUnit</li>
+                                        <li class="skill">.Net Core</li>
+                                        <li class="skill">ASP.Net</li>
+                                        <li class="skill">MVC</li>
+                                        <li class="skill">Umbraco</li>
+                                        <li class="skill">Sitecore</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="get-in-touch text-center">
+                                <a href="#contact_me" aria-label="Link to contact me page" label="Link to contact me page"></a>
+                                <h2>Think your company should be on here?</h2>
+                                <h2>Get in touch!</h2>
+                            </div>
                         </div>
                     </div>
 
@@ -343,9 +347,9 @@
         </div>
     </div>
 
-    <div class="hidden-pages">
+    <div class="hidden-pages closed">
 
-        <div class="hidden-page" id="phishtackleAPI">
+        <div class="hidden-page closed" id="phishtackleAPI">
             <div class="hidden-page-nav">
                 <div class="hidden-page-nav-title"><p>PhishTackle-API <span class="nav-close-token" aria-label="close project page" onclick="closeHiddenPages()">✕</span></p></div>
                 <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>✕</p></a>
@@ -450,7 +454,7 @@
             </div>
         </div>
 
-        <div class="hidden-page" id="umbraco">
+        <div class="hidden-page closed" id="umbraco">
             <div class="hidden-page-nav">
                 <div class="hidden-page-nav-title"><p>Umbraco CMS <span class="nav-close-token" aria-label="close project page" onclick="closeHiddenPages()">✕</span></p></div>
                 <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>✕</p></a>
@@ -642,7 +646,7 @@
             </div>
         </div>
 
-        <div class="hidden-page" id="techne_diversity">
+        <div class="hidden-page closed" id="techne_diversity">
             <div class="hidden-page-nav">
                 <div class="hidden-page-nav-title"><p>Techne Diversity <span class="nav-close-token" aria-label="close project page" onclick="closeHiddenPages()" ">✕</span></p></div>
                 <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>✕</p></a>
@@ -695,7 +699,7 @@
             </div>
         </div>
 
-        <div class="hidden-page" id="wessex_internet">
+        <div class="hidden-page closed" id="wessex_internet">
             <div class="hidden-page-nav">
                 <div class="hidden-page-nav-title"><p>Wessex Internet <span class="nav-close-token" aria-label="close project page" onclick="closeHiddenPages()">✕</span></p></div>
                 <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>✕</p></a>
@@ -769,7 +773,7 @@
             </div>
         </div>
 
-        <div class="hidden-page" id="onewelbeck">
+        <div class="hidden-page closed" id="onewelbeck">
             <div class="hidden-page-nav">
                 <div class="hidden-page-nav-title"><p>OneWelbeck Healthcare <span class="nav-close-token" aria-label="close project page" onclick="closeHiddenPages()">✕</span></p></div>
                 <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>✕</p></a>

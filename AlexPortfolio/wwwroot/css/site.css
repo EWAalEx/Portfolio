@@ -98,8 +98,13 @@ html {
 }
 
 body {
-    margin-bottom: 60px;
+    /*margin-bottom: 60px;*/
     font-family: roboto;
+}
+
+#page-theme {
+    width: 100vw;
+    height: 100vh;
 }
 
 .dw-50 {
@@ -218,8 +223,8 @@ textarea {
 }
 
 .overlay {
-    width: 100vw;
-    height: calc(100vh + 1px);
+    width: inherit;
+    height: inherit;
     position: fixed;
     padding: 2rem;
     background: #000;
@@ -518,7 +523,6 @@ textarea {
     scroll-snap-type: y mandatory;
     overflow-x: hidden;
     height: calc(100vh - 6rem);
-    /*background-color: #0000ff4a;*/
     position: relative;
     top: 3rem;
     width: calc(100vw - 6rem);
@@ -536,8 +540,38 @@ textarea {
     padding: 1rem;
 }
 
+    .page#page-1 {
+        overflow-y: hidden;
+    }
+
+        .page#page-1 .scrollable {
+            overflow-y: auto;
+        }
+
+            .page#page-1 .scrollable::-webkit-scrollbar {
+                width: 0.5rem;
+            }
+
     .page .title-header {
         position: absolute;
+    }
+
+.dark .page#page-1 .scrollable::-webkit-scrollbar-thumb {
+    background: rgb(56, 216, 29);
+    border-radius: 10px;
+}
+
+    .dark .page#page-1 .scrollable::-webkit-scrollbar-thumb:hover {
+        background: rgb(38 147 20);
+    }
+
+.light .page#page-1 .scrollable::-webkit-scrollbar-thumb {
+    background: rgb(48, 0, 226);
+    border-radius: 10px;
+}
+
+    .light .page#page-1 .scrollable::-webkit-scrollbar-thumb:hover {
+        background: rgb(33 0 155);
     }
 
 #title-name {
@@ -1112,7 +1146,7 @@ section#about_me {
         }
 
             section#about_me .page-text .paragraph.scrollable::-webkit-scrollbar {
-                width: 1rem;
+                width: 0.5rem;
             }
 
         section#about_me .page-text .paragraph .quote p {
@@ -1211,12 +1245,16 @@ section#experience {
         height: 100%;
         display: flex;
         flex-direction: column;
-        overflow: auto;
+        overflow-y: hidden;
     }
 
-        section#experience .page-text::-webkit-scrollbar {
-            width: 1rem;
+        section#experience .page-text .scrollable {
+            overflow-y: auto;
         }
+
+            section#experience .page-text .scrollable::-webkit-scrollbar {
+                width: 0.5rem;
+            }
 
         section#experience .page-text .quote {
             font-size: 2.5em;
@@ -1441,6 +1479,24 @@ section#experience {
     color: rgb(48, 0, 226);
 }
 
+.light section#experience .page-text .scrollable::-webkit-scrollbar-thumb {
+    background: rgb(48, 0, 226);
+    border-radius: 10px;
+}
+
+    .light section#experience .page-text .scrollable::-webkit-scrollbar-thumb:hover {
+        background: rgb(33 0 155);
+    }
+
+.dark section#experience .page-text .scrollable::-webkit-scrollbar-thumb {
+    background: rgb(56, 216, 29);
+    border-radius: 10px;
+}
+
+    .dark section#experience .page-text .scrollable::-webkit-scrollbar-thumb:hover {
+        background: rgb(38 147 20);
+    }
+
 .dark section#experience .experiences {
     color: #f8f8ff;
 }
@@ -1491,25 +1547,6 @@ section#experience {
     color: rgb(56, 216, 29);
 }
 
-
-.dark section#experience .page-text::-webkit-scrollbar-thumb {
-    background: rgb(56, 216, 29);
-    border-radius: 10px;
-}
-
-    .dark section#experience .page-text::-webkit-scrollbar-thumb:hover {
-        background: rgb(38 147 20);
-    }
-
-.light section#experience .page-text::-webkit-scrollbar-thumb {
-    background: rgb(48, 0, 226);
-    border-radius: 10px;
-}
-
-    .light section#experience .page-text::-webkit-scrollbar-thumb:hover {
-        background: rgb(33 0 155);
-    }
-
 .hidden-pages {
     position: fixed;
     width: calc(100vw - 7rem);
@@ -1557,9 +1594,6 @@ section#experience {
 
             .hidden-pages .hidden-page .hidden-page-content::-webkit-scrollbar {
                 width: 0.5rem;
-            }
-
-            .hidden-pages .hidden-page .hidden-page-content::-webkit-scrollbar:hover {
             }
 
             .hidden-pages .hidden-page .hidden-page-content .paragraph {
@@ -1747,9 +1781,9 @@ section#experience {
                 background: #272422;
             }
 
-            .dark .hidden-pages .hidden-page .hidden-page-content {
-                color: #f8f8ff;
-            }
+        .dark .hidden-pages .hidden-page .hidden-page-content {
+            color: #f8f8ff;
+        }
 
             .dark .hidden-pages .hidden-page .hidden-page-content .image.onnx-logo {
                 filter: invert(1);
@@ -1764,15 +1798,15 @@ section#experience {
                     background: rgb(38 147 20);
                 }
 
-                .dark .hidden-pages .hidden-page .hidden-page-content .table {
+            .dark .hidden-pages .hidden-page .hidden-page-content .table {
+                color: #f8f8ff;
+                border-color: #f8f8ff;
+            }
+
+                .dark .hidden-pages .hidden-page .hidden-page-content .table table td {
                     color: #f8f8ff;
                     border-color: #f8f8ff;
                 }
-
-                    .dark .hidden-pages .hidden-page .hidden-page-content .table table td {
-                        color: #f8f8ff;
-                        border-color: #f8f8ff;
-                    }
 
 .light .hidden-pages {
     box-shadow: 0px 0px 10px 1px rgb(48, 0, 226);
@@ -1797,18 +1831,18 @@ section#experience {
                     background: #ebebeb;
                 }
 
-                .light .hidden-pages .hidden-page .hidden-page-nav .hidden-page-nav-close {
-                    color: #000000;
-                    font-weight: bold;
+            .light .hidden-pages .hidden-page .hidden-page-nav .hidden-page-nav-close {
+                color: #000000;
+                font-weight: bold;
+            }
+
+                .light .hidden-pages .hidden-page .hidden-page-nav .hidden-page-nav-close:hover {
+                    color: #f8f8ff;
                 }
 
-                    .light .hidden-pages .hidden-page .hidden-page-nav .hidden-page-nav-close:hover {
-                        color: #f8f8ff;
-                    }
-
-                    .light .hidden-pages .hidden-page .hidden-page-content {
-                        color: #000000;
-                    }
+        .light .hidden-pages .hidden-page .hidden-page-content {
+            color: #000000;
+        }
 
             .light .hidden-pages .hidden-page .hidden-page-content .image.onnx-logo {
                 filter: invert(0);
@@ -1823,10 +1857,10 @@ section#experience {
                     background: rgb(33 0 155);
                 }
 
-                    .light .hidden-pages .hidden-page .hidden-page-content .table {
-                        color: #000000;
-                        border-color: #000000;
-                    }
+            .light .hidden-pages .hidden-page .hidden-page-content .table {
+                color: #000000;
+                border-color: #000000;
+            }
 
                 .light .hidden-pages .hidden-page .hidden-page-content .table table td {
                     color: #000000;
@@ -1855,13 +1889,17 @@ section#experience {
         font-size: 4rem;
     }
 
-    .page .section-links li {
-        font-size: 2em;
+    .page {
+        padding: 2rem;
     }
 
-    .page .bio-text {
-        font-size: 4rem;
-    }
+        .page .section-links li {
+            font-size: 2em;
+        }
+
+        .page .bio-text {
+            font-size: 4rem;
+        }
 
     #title-name {
         font-size: 6rem;
@@ -1968,42 +2006,6 @@ section#experience {
 }
 
 @media only screen and (max-width: 768px) {
-
-    .overlay-borders {
-        height: calc(100% - 37px);
-    }
-
-        .overlay-borders .bottom-left {
-            margin-bottom: 65px;
-        }
-
-        .overlay-borders .bottom-right {
-            margin-bottom: 65px;
-        }
-
-    .overlay-timer p {
-        margin-bottom: 65px;
-    }
-
-    .overlay-stats .overlay-recording {
-        margin-bottom: 65px;
-    }
-
-    .overlay-stats .overlay-battery {
-        margin-bottom: 65px;
-    }
-
-    .overlay .page-position {
-        top: 45%
-    }
-
-    .page-content {
-        height: calc(calc(100vh - 6rem) - 37px)
-    }
-
-    .hidden-pages {
-        height: calc(calc(100vh - 7rem) - 37px);
-    }
 
     .dw-50 {
         width: 100% !important;
@@ -2174,6 +2176,41 @@ section#experience {
 }
 
 @media only screen and (max-width: 767px) {
+    .overlay-borders {
+        height: calc(100% - 37px);
+    }
+
+        .overlay-borders .bottom-left {
+            margin-bottom: 65px;
+        }
+
+        .overlay-borders .bottom-right {
+            margin-bottom: 65px;
+        }
+
+    .overlay-timer p {
+        margin-bottom: 65px;
+    }
+
+    .overlay-stats .overlay-recording {
+        margin-bottom: 65px;
+    }
+
+    .overlay-stats .overlay-battery {
+        margin-bottom: 65px;
+    }
+
+    .overlay .page-position {
+        top: 45%
+    }
+
+    .page-content {
+        height: calc(calc(100vh - 6rem) - 37px)
+    }
+
+    .hidden-pages {
+        height: calc(calc(100vh - 7rem) - 37px);
+    }
 
     .desktop-only {
         display: none;
