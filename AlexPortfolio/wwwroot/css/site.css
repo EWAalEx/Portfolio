@@ -2176,41 +2176,6 @@ section#experience {
 }
 
 @media only screen and (max-width: 767px) {
-    .overlay-borders {
-        height: calc(100% - 37px);
-    }
-
-        .overlay-borders .bottom-left {
-            margin-bottom: 65px;
-        }
-
-        .overlay-borders .bottom-right {
-            margin-bottom: 65px;
-        }
-
-    .overlay-timer p {
-        margin-bottom: 65px;
-    }
-
-    .overlay-stats .overlay-recording {
-        margin-bottom: 65px;
-    }
-
-    .overlay-stats .overlay-battery {
-        margin-bottom: 65px;
-    }
-
-    .overlay .page-position {
-        top: 45%
-    }
-
-    .page-content {
-        height: calc(calc(100vh - 6rem) - 37px)
-    }
-
-    .hidden-pages {
-        height: calc(calc(100vh - 7rem) - 37px);
-    }
 
     .desktop-only {
         display: none;

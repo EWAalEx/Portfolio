@@ -236,7 +236,7 @@ function pageSetup(pageLen) {
     var page_content = document.querySelector('.page-content');
     var page_bar = document.querySelector('.page-bar');
 
-    var pages = Math.ceil(page_content.scrollHeight / page_content.clientHeight);
+    var pages = Math.floor(page_content.scrollHeight / page_content.clientHeight);
 
     if (pages > pageLen) {
         for (i = pageLen + 1; i < pages + 1; i++) {
@@ -384,8 +384,11 @@ closeHiddenPages();
 function fixIOS() {
     const page = document.querySelector("#page-theme");
     const internalPage = document.querySelector(".page-content");
+    const hiddenPages = document.querySelector(".hidden-pages");
+
     page.style.height = window.innerHeight + "px";
-    internalPage.style.height = "calc(" + window.innerHeight + " - 6rem)";
+    internalPage.style.height = "calc(" + window.innerHeight + "px - 6rem)";
+    hiddenPages.style.height = "calc(" + window.innerHeight + "px - 7rem)";
 }
 
 /// overlay effects
