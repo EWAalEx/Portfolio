@@ -301,46 +301,48 @@
                     <h1 class="display-4">Contact me</h1>
                 </div>
 
-                <form class="contact-form" method="post" asp-action="Index" asp-controller="Home">
+                <div class="scrollable">
+                    <form class="contact-form" method="post" asp-action="Index" asp-controller="Home">
 
-                    @if (Model.HasSuccessMessage)
-                    {
-                        <div class="messages">
-                            <p class="alert">
-                                @Model.SuccessMessage
-                            </p>
-                            <div class="strobe">
+                        @if (Model.HasSuccessMessage)
+                        {
+                            <div class="messages">
+                                <p class="alert">
+                                    @Model.SuccessMessage
+                                </p>
+                                <div class="strobe">
+                                </div>
+                            </div>
+                        }
+
+                        <div class="form-group name">
+                            <label asp-for="Name" for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" asp-for="Name" role="textbox" required>
+                        </div>
+                        <div class="group-row">
+                            <div class="form-group email">
+                                <label asp-for="Email" for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" class="form-input" role="textbox" asp-for="Email">
+                            </div>
+                            <div class="form-group phone">
+                                <label asp-for="Phone" for="phone" class="form-label">Phone</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" inputmode="tel" role="textbox" asp-for="Phone">
                             </div>
                         </div>
-                    }
-
-                    <div class="form-group name">
-                        <label asp-for="Name" for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="form-input" asp-for="Name" role="textbox" required>
-                    </div>
-                    <div class="group-row">
-                        <div class="form-group email">
-                            <label asp-for="Email" for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-input" role="textbox" asp-for="Email">
+                        <div class="form-group message">
+                            <label asp-for="Message" for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5" asp-for="Message" role="textbox" required></textarea>
                         </div>
-                        <div class="form-group phone">
-                            <label asp-for="Phone" for="phone" class="form-label">Phone</label>
-                            <input type="tel" id="phone" name="phone" class="form-input" inputmode="tel" role="textbox" asp-for="Phone">
-                        </div>
-                    </div>
-                    <div class="form-group message">
-                        <label asp-for="Message" for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-textarea" rows="5" asp-for="Message" role="textbox" required></textarea>
-                    </div>
-                    <button type="submit" class="form-button" role="button">Submit</button>
-                </form>
+                        <button type="submit" class="form-button" role="button">Submit</button>
+                    </form>
 
-                <div class="socials">
-                    <div id="linkedin" class="social-icon">
-                        <a href="https://www.linkedin.com/in/alex-ellis-wilson-879a30177/" target="_blank" aria-label="Link for my Linkedin"></a>
-                    </div>
-                    <div id="GitHub" class="social-icon">
-                        <a href="https://github.com/EWAalEx" target="_blank" aria-label="Link for my GitHub"></a>
+                    <div class="socials">
+                        <div id="linkedin" class="social-icon">
+                            <a href="https://www.linkedin.com/in/alex-ellis-wilson-879a30177/" target="_blank" aria-label="Link for my Linkedin"></a>
+                        </div>
+                        <div id="GitHub" class="social-icon">
+                            <a href="https://github.com/EWAalEx" target="_blank" aria-label="Link for my GitHub"></a>
+                        </div>
                     </div>
                 </div>
             </section>

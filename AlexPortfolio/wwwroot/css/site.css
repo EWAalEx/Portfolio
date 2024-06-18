@@ -778,12 +778,24 @@ textarea {
     filter: contrast(1) saturate(0) invert(0);
 }
 
+#contact_me .scrollable {
+    overflow-y: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    #contact_me .scrollable::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+
 .contact-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height: calc(100% - 2rem);
     gap: 1rem;
     padding: 2rem;
 }
@@ -825,12 +837,6 @@ textarea {
                 height: 100%;
             }
 
-.dark .contact-form .alert {
-    background-color: #ffffff08;
-    border-color: #f8f8ff;
-    animation: blue-strobe;
-}
-
 .light .contact-form .alert {
     background-color: #ffffff08;
     border-color: black;
@@ -871,6 +877,26 @@ textarea {
         color: #f8f8ff;
     }
 
+.light .contact-form .form-group label {
+    color: black;
+}
+
+
+.light #contact_me .scrollable::-webkit-scrollbar-thumb {
+    background: rgb(48, 0, 226);
+    border-radius: 10px;
+}
+
+    .light #contact_me .scrollable::-webkit-scrollbar-thumb:hover {
+        background: rgb(33 0 155);
+    }
+
+.dark .contact-form .alert {
+    background-color: #ffffff08;
+    border-color: #f8f8ff;
+    animation: blue-strobe;
+}
+
 .dark .contact-form .form-group.message #message {
     border-radius: 1rem;
     border: #f8f8ff solid 2px;
@@ -906,13 +932,18 @@ textarea {
         color: #000000;
     }
 
-.light .contact-form .form-group label {
-    color: black;
-}
-
 .dark .contact-form .form-group label {
     color: #f8f8ff;
 }
+
+.dark #contact_me .scrollable::-webkit-scrollbar-thumb {
+    background: rgb(56, 216, 29);
+    border-radius: 10px;
+}
+
+    .dark #contact_me .scrollable::-webkit-scrollbar-thumb:hover {
+        background: rgb(38 147 20);
+    }
 
 .socials {
     display: flex;
@@ -2173,6 +2204,22 @@ section#experience {
                 section#experience .page-text .paragraph .body-text p {
                     font-size: 0.9em;
                 }
+
+    .overlay-borders .top-left:after {
+        height: 20vw;
+    }
+
+    .overlay-borders .top-right:after {
+        height: 20vw;
+    }
+
+    .overlay-borders .bottom-left:after {
+        height: 20vw;
+    }
+
+    .overlay-borders .bottom-right:after {
+        height: 20vw;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -2234,14 +2281,17 @@ section#experience {
             height: auto;
             align-items: center;
         }
-
+    .contact-form {
+        height: auto;
+    }
+    
     .contact-form .group-row {
-        flex-direction: column;
-    }
+            flex-direction: column;
+        }
 
-    .contact-form .form-button {
-        width: 50%;
-    }
+        .contact-form .form-button {
+            width: 50%;
+        }
 
     .tapes {
         flex-direction: column;
