@@ -236,7 +236,7 @@ function pageSetup(pageLen) {
     var page_content = document.querySelector('.page-content');
     var page_bar = document.querySelector('.page-bar');
 
-    var pages = Math.ceil(page_content.scrollHeight / page_content.clientHeight);
+    var pages = Math.floor(page_content.scrollHeight / page_content.clientHeight);
 
     if (pages > pageLen) {
         for (i = pageLen + 1; i < pages + 1; i++) {
@@ -352,6 +352,45 @@ function followMousePosition(mouseX, mouseY) {
 
 }
 
+//show and hide hidden pages
+function showProjectPage(pageId) {
+    var hidden_page_container = document.querySelector(".hidden-pages");
+
+    var target_page = document.querySelector("#" + pageId);
+
+    hidden_page_container.classList.toggle("closed");
+
+    target_page.classList.toggle("closed");
+}
+
+function closeHiddenPages() {
+    var hidden_page_container = document.querySelector(".hidden-pages");
+
+    if(!hidden_page_container.classList.contains("closed")) {
+        hidden_page_container.classList.toggle("closed");
+    }
+
+    for (i = 0; i < hidden_page_container.childElementCount; i++) {
+        var child = hidden_page_container.children[i];
+        if (!child.classList.contains("closed")) {
+            child.classList.toggle("closed");
+        }
+    }
+}
+
+//hide all pages
+closeHiddenPages();
+
+function fixIOS() {
+    const page = document.querySelector("#page-theme");
+    const internalPage = document.querySelector(".page-content");
+    const hiddenPages = document.querySelector(".hidden-pages");
+
+    page.style.height = window.innerHeight + "px";
+    internalPage.style.height = "calc(" + window.innerHeight + "px - 6rem)";
+    hiddenPages.style.height = "calc(" + window.innerHeight + "px - 7rem)";
+}
+
 /// overlay effects
 //for recording
 const recording_dot = document.querySelector("#recording-dot");
@@ -392,9 +431,11 @@ page_content.addEventListener("scroll", pagePosition);
 
 //underline under name matches width
 setUnderline();
-window.onresize = () => (pageLen = pageSetup(pageLen), setUnderline());
+window.onresize = () => (pageLen = pageSetup(pageLen), setUnderline(), fixIOS());
 
 //mouse hover effect
 var mousePosition = [0, 0];
 
-document.onmousemove = () => (mousePosition = getMousePosition())
+document.onmousemove = () => (mousePosition = getMousePosition());
+
+window.onresize();

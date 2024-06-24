@@ -1,0 +1,11 @@
+<svg id="battery" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 289 125" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" stroke="black" fill="black">
+	<g transform="matrix(1.260362 0 0 1.260359-57.808825-126.55385)">
+		<rect id="batteryShell" width="200" height="90" rx="0" ry="0" transform="translate(50 105)" fill="none" stroke-width="10"/>
+		<rect id="batteryTip" width="25" height="45" rx="0" ry="0" transform="translate(250 128.5)"/>
+		<polygon id="batteryCell-1" points="-2.769884,-30 12.651725,-30 12.651725,40 -24.769884,40 -2.769884,-30" transform="matrix(-1 0 0-1 72.651725 156)" stroke-width="0"/>
+		<polygon id="batteryCell-2" points="-1.594007,-30 34.151725,-30 13.714145,40 -24.348275,40 -1.594007,-30" transform="translate(103.05908 145.62729)" stroke-width="0"/>
+		<polygon id="batteryCell-3" points="-5.574484,-30 33.417454,-30 12.417454,40 -26.574484,40 -5.574484,-30" transform="translate(146.847147 146)" stroke-width="0"/>
+		<polygon id="batteryCell-4" points="-6.924205,-30 30.653982,-30 7.923357,40 -27.924205,40 -6.924205,-30" transform="translate(191.056823 146)" stroke-width="0"/>
+		<polygon id="batteryCell-5" points="-2.769884,-30 12.651725,-30 12.651725,40 -24.769884,40 -2.769884,-30" transform="translate(227.769884 146)" stroke-width="0"/>
+	</g>
+</svg>
