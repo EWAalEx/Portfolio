@@ -1,28 +1,26 @@
 ﻿using AlexPortfolio.Models;
 using AlexPortfolio.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
 namespace AlexPortfolio.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> logger;
-        private readonly IMailService _mailService;
+        private readonly IConfiguration _configuration;
 
         [TempData]
-        public string SuccessMessage { get; set; }
+        public string SuccessMessage { get; set; } = "";
 
-        public HomeController(ILogger<HomeController> logger, IMailService _MailService)
+        public HomeController(IConfiguration configuration)
         {
-            _mailService = _MailService;
-            this.logger = logger;
+            _configuration = configuration;
         }
 
         [HttpGet, Route("", Name = "root")]
         public IActionResult Index()
         {
+            ViewData["RecaptchaSiteKey"] = _configuration["Recaptcha:SiteKey"];
             return View(new ContactModel
             {
                 SuccessMessage = SuccessMessage
@@ -30,44 +28,22 @@ namespace AlexPortfolio.Controllers
 
         }
 
-        [HttpPost, Route("", Name="root")]
-        public IActionResult Index([FromForm] ContactModel model)
+        [HttpGet, Route("/FormSuccess", Name = "FormSuccess")]
+        public IActionResult FormSuccess()
         {
-            if (ModelState.IsValid)
-            {
-                MailModel mailData = new MailModel();
+            SuccessMessage = "Thank you for contacting me! I'll respond soon!";
 
-                mailData.EmailToName = "Alex Ellis-Wilson";
-                mailData.EmailToId = "alexelliswilson@gmail.com";
-                mailData.EmailSubject = "Email From Portfolio Site!";
-                //mailData.EmailBody = "New Email from your portfolio site!\nEmail From: " + model.Name + "\nProvided Email: " + model.Email + "\nProvided Phone Number: " + model.Phone + "\nMessage: " + model.Message;
+            return RedirectToAction(nameof(Index));
 
-                mailData.EmailBody = @"<!DOCTYPE html><html><head><style>body {font-family: Arial, sans-serif;line-height: 1.6;color: #333;}.container {width: 100%;max-width: 600px;margin: 0 auto;padding: 20px;border: 1px solid #ddd;border-radius: 10px;background-color: #f9f9f9;}h2 {color: #4CAF50;}.info {margin-bottom: 20px;}.info strong {display: inline-block;width: 150px;}</style></head>
-<body>
-    <div class='container'>
-        <h2>New Email from your Portfolio Site!</h2>
-        <div class='info'>
-            <strong>Email From:</strong> <span>" + model.Name + @"</span><br>
-            <strong>Provided Email:</strong> <span>" + model.Email + @"</span><br>
-            <strong>Provided Phone Number:</strong> <span>" + model.Phone + @"</span></div><div class='message'>
-            <strong>Message:</strong><p>" + model.Message + @"</p>
-        </div>
-    </div>
-</body>
-</html>";
+        }
 
-                SuccessMessage = "Thank you for contacting me! I'll respond soon!";
+        [HttpGet, Route("/FormError", Name = "FormError")]
+        public IActionResult FormError()
+        {
+            SuccessMessage = "Your form didn't submit, please check your details and try again later!";
 
-                //do something with form data
+            return RedirectToAction(nameof(Index));
 
-                logger.LogInformation("Contact message submitted: {Message}", model);
-
-                _mailService.SendMail(mailData);
-
-                return RedirectToAction(nameof(Index));
-            }
-
-            return View(model);
         }
 
         [HttpGet, Route("/privacy", Name = "privacy")]

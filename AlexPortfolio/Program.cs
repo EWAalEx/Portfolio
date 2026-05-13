@@ -26,7 +26,9 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 
-builder.Services.AddTransient<IMailService, MailService>();
+builder.Services.AddSingleton<IMailService, MailService>();
+builder.Services.AddSingleton<IAuthenticationService, AuthenticationService>();
+builder.Services.AddSingleton<IRecaptchaEnterpriseClient, RecaptchaEnterpriseClient>();
 
 var app = builder.Build();
 

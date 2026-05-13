@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AlexPortfolio.Models
 {
@@ -18,5 +17,9 @@ namespace AlexPortfolio.Models
             SuccessMessage is not null;
         
         public string? SuccessMessage { get; init; }
+
+        [Required(ErrorMessage = "Recaptcha must be completed to submit")]
+        [FromForm(Name = "g-recaptcha-response")]
+        public string? RecaptchaResponse { get; set; }
     }
 }

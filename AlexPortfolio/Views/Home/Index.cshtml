@@ -332,7 +332,7 @@
                 </div>
 
                 <div class="scrollable">
-                    <form class="contact-form" method="post" asp-action="Index" asp-controller="Home">
+                    <form class="contact-form" method="post" asp-action="ContactForm" asp-controller="Contact">
 
                         @if (Model.HasSuccessMessage)
                         {
@@ -363,6 +363,7 @@
                             <label asp-for="Message" for="message" class="form-label">Message</label>
                             <textarea id="message" name="message" class="form-textarea" rows="5" asp-for="Message" role="textbox" required></textarea>
                         </div>
+                        <div class="g-recaptcha" data-sitekey="@ViewData["RecaptchaSiteKey"]" data-action="CONTACT_FORM"></div>
                         <button type="submit" class="form-button" role="button">Submit</button>
                     </form>
 
@@ -680,7 +681,7 @@
 
         <div class="hidden-page closed" id="techne_diversity">
             <div class="hidden-page-nav">
-                <div class="hidden-page-nav-title"><p>Techne Diversity <span class="nav-close-token" aria-label="close project page" onclick="closeHiddenPages()" ">✕</span></p></div>
+                <div class="hidden-page-nav-title"><p>Techne Diversity <span class="nav-close-token" aria-label="close project page" onclick="closeHiddenPages()">✕</span></p></div>
                 <a class="hidden-page-nav-close" aria-label="close project page" onclick="closeHiddenPages()"><p>✕</p></a>
             </div>
             <div class="hidden-page-content">
