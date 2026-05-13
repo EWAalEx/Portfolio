@@ -32,6 +32,13 @@ jobs:
      - name: Publish
        run: dotnet publish ./AlexPortfolio.sln --configuration Release --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
 
+     - name: Create JSON file
+       shell: bash
+       run: |
+         cat <<EOF > "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/alexs-portfolio-site-3cc2a8a93f30.json"
+         ${{ secrets.MY_JSON_FILE }}
+         EOF
+
      - name: Deployment
        uses: azure/webapps-deploy@v2
        with:
